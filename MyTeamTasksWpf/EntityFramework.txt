@@ -1,0 +1,16 @@
+﻿Anotações sobre o Entity Framework - code first
+	1 - Instalar o EF = Install-Package EntityFramework
+	2 - Criar as classes de modelo e a classe Context 
+		2.1 - Context representa o EF e o DB dentro do projeto
+		2.2 - Define as classes que viram tabela no DB
+	3 - Habilitar as migrations = Enable-Migrations
+	4 - Adicionar uma migration = Add-Migration NomeDaMigracao
+	5 - Atualizar o DB = Update-Database -verbose
+	
+	OBS: A migracao sempre gera a diferenca entre a modelo e o DB. Uma migration
+	vazia significa que não existe diferença entre a model e o DB.
+
+Visualização do banco
+1 - View -> SQL Server Object Explorer
+
+OBS: Sempre que adicionamos uma nova model, isso ira geral uma nova tabela, logo temos que declarar a nova model no context
