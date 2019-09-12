@@ -1,12 +1,10 @@
-﻿<Window x:Class="MyTeamTasksWpf.MainWindow"
+﻿<Window x:Class="MyTeamTasksWpf.View.Tarefa.CriarTarefa"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MyTeamTasksWpf"
+        xmlns:local="clr-namespace:MyTeamTasksWpf.View.Tarefa"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="CriarTarefa" Height="450" Width="800">
+    <Grid/>
 </Window>
