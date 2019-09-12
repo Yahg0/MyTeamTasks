@@ -6,7 +6,7 @@
 Install-Package EntityFramework
 ```
 
-- Material design 
+- Material Design In XAML 
 ```
 Install-Package MaterialDesignThemes
 ```
