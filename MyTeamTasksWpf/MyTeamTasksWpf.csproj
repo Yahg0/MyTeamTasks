@@ -75,6 +75,10 @@
     </ApplicationDefinition>
     <Compile Include="DAL\SingletonContext.cs" />
     <Compile Include="DAL\UsuarioDAO.cs" />
+    <Compile Include="Migrations\201909141817485_MigrationQueCriaABase.cs" />
+    <Compile Include="Migrations\201909141817485_MigrationQueCriaABase.Designer.cs">
+      <DependentUpon>201909141817485_MigrationQueCriaABase.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\vTarefa\CriarTarefa.xaml.cs">
       <DependentUpon>CriarTarefa.xaml</DependentUpon>
     </Compile>
@@ -95,18 +99,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201909071925435_CriacaoDasModels.cs" />
-    <Compile Include="Migrations\201909071925435_CriacaoDasModels.Designer.cs">
-      <DependentUpon>201909071925435_CriacaoDasModels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909081658133_correcaoDoTipoNickNameDoUsuario.cs" />
-    <Compile Include="Migrations\201909081658133_correcaoDoTipoNickNameDoUsuario.Designer.cs">
-      <DependentUpon>201909081658133_correcaoDoTipoNickNameDoUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909081758378_removidoAtributoRepetidoDeUsuarioNaTarefa.cs" />
-    <Compile Include="Migrations\201909081758378_removidoAtributoRepetidoDeUsuarioNaTarefa.Designer.cs">
-      <DependentUpon>201909081758378_removidoAtributoRepetidoDeUsuarioNaTarefa.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Cliente.cs" />
     <Compile Include="Model\Context.cs" />
@@ -127,14 +119,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201909071925435_CriacaoDasModels.resx">
-      <DependentUpon>201909071925435_CriacaoDasModels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909081658133_correcaoDoTipoNickNameDoUsuario.resx">
-      <DependentUpon>201909081658133_correcaoDoTipoNickNameDoUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909081758378_removidoAtributoRepetidoDeUsuarioNaTarefa.resx">
-      <DependentUpon>201909081758378_removidoAtributoRepetidoDeUsuarioNaTarefa.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201909141817485_MigrationQueCriaABase.resx">
+      <DependentUpon>201909141817485_MigrationQueCriaABase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
