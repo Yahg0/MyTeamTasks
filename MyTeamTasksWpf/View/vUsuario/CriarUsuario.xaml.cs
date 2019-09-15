@@ -30,31 +30,29 @@ namespace MyTeamTasksWpf.View.vUsuario
         }
 
         private void BtnInserir_Click(object sender, RoutedEventArgs e)
-        {
-            u = new Usuario();
-
-            lbMensagem.Content = "";
+        {            
+            //lbMensagem.Content = "";
 
             if (!txtCargo.Text.Equals("") &&
                 !txtNickName.Text.Equals("") &&
                 !txtSenha.Text.Equals(""))
             {
-                u.Cargo = txtCargo.Text;
-                u.Nickname = txtNickName.Text;
-                u.Senha = txtSenha.Text;
+                u = new Usuario()
+                {
+                    Cargo = txtCargo.Text,
+                    Nickname = txtNickName.Text,
+                    Senha = txtSenha.Text
+                };
 
                 UsuarioDAO.CadastrarUsuario(u);
 
                 lbMensagem.Foreground = new SolidColorBrush(Colors.DarkGreen);
-                //lbMensagem.Content = "Usuario inserido !";
                 MensagemDeConfirmacaoOuErro("Usuario inserido !");
+                LimparCampos();
 
             }
             else
             {
-                //MessageBox.Show("Preencha todos os campos antes de inserir !", 
-                //    "Campos vazios encontrados", 
-                //    MessageBoxButton.OK, MessageBoxImage.Error);
                 lbMensagem.Foreground = new SolidColorBrush(Colors.DarkRed);
                 MensagemDeConfirmacaoOuErro("Preencha todos os campos antes de inserir !");
             }
@@ -63,11 +61,9 @@ namespace MyTeamTasksWpf.View.vUsuario
 
         private void BtnPesquisar_Click(object sender, RoutedEventArgs e)
         {
-            if (!txtNickName.Text.Equals("")){
-                u.Nickname = txtNickName.Text;
-
-                u = UsuarioDAO.BuscarUsuarioPorNome(u);
-
+            if (!txtNickName.Text.Equals(""))
+            {
+                u = UsuarioDAO.BuscarUsuarioPorNome(txtNickName.Text);
                 if (u != null)
                 {
                     txtId.Text = u.UsuarioId.ToString();
@@ -88,6 +84,56 @@ namespace MyTeamTasksWpf.View.vUsuario
             }
         }
 
+        private void BtnExcluir_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Tem certeza de que deseja remover este usuario ?",
+                   "Gerenciar usuarios",
+                   MessageBoxButton.YesNo,
+                   MessageBoxImage.Information) == MessageBoxResult.Yes)
+            {
+                if (UsuarioDAO.RemoverUsuario(u))
+                {
+                    lbMensagem.Foreground = new SolidColorBrush(Colors.DarkGreen);
+                    MensagemDeConfirmacaoOuErro("Usuario removido !");
+                    LimparCampos();
+                }
+                else
+                {
+                    lbMensagem.Foreground = new SolidColorBrush(Colors.DarkRed);
+                    MensagemDeConfirmacaoOuErro("Não foi possivel remover o usuario selecionado, revise os campos !");
+                }
+            }
+        }
+       
+        private void BtnEditar_Click(object sender, RoutedEventArgs e)
+        {            
+            if (!txtCargo.Text.Equals("") &&
+                !txtNickName.Text.Equals("") &&
+                !txtSenha.Text.Equals(""))
+            {
+                u.Cargo = txtCargo.Text;
+                u.Nickname = txtNickName.Text;
+                u.Senha = txtSenha.Text;               
+                
+                if (UsuarioDAO.AlterarUsuario(u))
+                {
+                    lbMensagem.Foreground = new SolidColorBrush(Colors.DarkGreen);
+                    MensagemDeConfirmacaoOuErro("Usuario alterado !");
+                    LimparCampos();
+                }
+                else
+                {
+                    lbMensagem.Foreground = new SolidColorBrush(Colors.DarkRed);
+                    MensagemDeConfirmacaoOuErro("Erro! Usuario não alterado, revise os campos");
+                }
+            }
+            else
+            {
+                lbMensagem.Foreground = new SolidColorBrush(Colors.DarkRed);
+                MensagemDeConfirmacaoOuErro("Preencha os campos antes de editar !");
+            }
+        }
+
         private void MensagemDeConfirmacaoOuErro(String message, int Interval = 3000)
         {
             Timer timer = new Timer();
@@ -95,11 +141,19 @@ namespace MyTeamTasksWpf.View.vUsuario
             lbMensagem.Dispatcher.Invoke(new Action(() => lbMensagem.Content = message));//Atribui a mensagem na label
             lbMensagem.Dispatcher.Invoke(new Action(() => lbMensagem.Visibility = Visibility.Visible));//Seta a label como visivel
 
-            timer.Elapsed += (s, en) => {
+            timer.Elapsed += (s, en) =>
+            {
                 lbMensagem.Dispatcher.Invoke(new Action(() => lbMensagem.Visibility = Visibility.Hidden));//Esconde a label com os milisegundos setados na Interval
                 timer.Stop(); // Para o timer
             };
             timer.Start(); // Inicia o timer
+        }
+
+        public void LimparCampos() {
+            txtId.Clear();
+            txtCargo.Clear();
+            txtNickName.Clear();
+            txtSenha.Clear();
         }
     }
 }

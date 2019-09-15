@@ -1,6 +1,7 @@
 ﻿using MyTeamTasksWpf.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,16 +20,39 @@ namespace MyTeamTasksWpf.DAL
 
         public static List<Usuario> ListarUsuarios() => ctx.Usuarios.ToList();
 
-        public static Usuario BuscarUsuarioPorNome(Usuario u) {
-            return ctx.Usuarios.SingleOrDefault(x => x.Nickname.Equals(u.Nickname));
+        public static Usuario BuscarUsuarioPorNome(string nome) {
+            return ctx.Usuarios.FirstOrDefault(x => x.Nickname.Equals(nome));
         }
 
-        public static void RemoverUsuario(Usuario u) {
+        public static bool RemoverUsuario(Usuario u)
+        {            
+            try
+            {              
+                ctx.Usuarios.Remove(u);
+                ctx.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
 
-            //Busca primeiro e depois remove
-            BuscarUsuarioPorNome(u);
-            ctx.Usuarios.Remove(u);
-            ctx.SaveChanges();
         }
+
+        public static bool AlterarUsuario(Usuario u)
+        {           
+            try
+            {
+                ctx.Entry(u).State = EntityState.Modified;
+                ctx.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        
     }
 }
