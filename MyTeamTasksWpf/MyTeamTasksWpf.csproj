@@ -150,6 +150,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Img\" />
     <Folder Include="Util\" />
     <Folder Include="View\vCliente\" />
     <Folder Include="View\vLogin\" />

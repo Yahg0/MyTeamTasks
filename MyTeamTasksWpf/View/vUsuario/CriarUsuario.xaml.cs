@@ -155,5 +155,15 @@ namespace MyTeamTasksWpf.View.vUsuario
             txtNickName.Clear();
             txtSenha.Clear();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            dglista.ItemsSource = UsuarioDAO.ListarUsuarios();
+        }
+
+        private void BtnAtualizarGrid_Click(object sender, RoutedEventArgs e)
+        {
+            dglista.ItemsSource = UsuarioDAO.ListarUsuarios();
+        }
     }
 }
