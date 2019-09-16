@@ -73,8 +73,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DAL\ClienteDAO.cs" />
+    <Compile Include="DAL\ProjetoDAO.cs" />
     <Compile Include="DAL\SingletonContext.cs" />
     <Compile Include="DAL\UsuarioDAO.cs" />
+    <Compile Include="Migrations\201909152331253_AdicionadoProjetoEmCliente.cs" />
+    <Compile Include="Migrations\201909152331253_AdicionadoProjetoEmCliente.Designer.cs">
+      <DependentUpon>201909152331253_AdicionadoProjetoEmCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\vProjeto\CriarProjeto.xaml.cs">
+      <DependentUpon>CriarProjeto.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\vTarefa\CriarTarefa.xaml.cs">
       <DependentUpon>CriarTarefa.xaml</DependentUpon>
     </Compile>
@@ -85,6 +94,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\vProjeto\CriarProjeto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\vTarefa\CriarTarefa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -136,6 +149,9 @@
     <EmbeddedResource Include="Migrations\201909081758378_removidoAtributoRepetidoDeUsuarioNaTarefa.resx">
       <DependentUpon>201909081758378_removidoAtributoRepetidoDeUsuarioNaTarefa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909152331253_AdicionadoProjetoEmCliente.resx">
+      <DependentUpon>201909152331253_AdicionadoProjetoEmCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -155,7 +171,6 @@
     <Folder Include="View\vCliente\" />
     <Folder Include="View\vLogin\" />
     <Folder Include="View\vPessoa\" />
-    <Folder Include="View\vProjeto\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="EntityFramework.txt" />

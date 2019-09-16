@@ -1,11 +1,11 @@
-﻿<Window x:Class="MyTeamTasksWpf.View.vUsuario.CriarUsuario"
+﻿<Window x:Class="MyTeamTasksWpf.View.vProjeto.CriarProjeto"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MyTeamTasksWpf.View.vUsuario"
+        xmlns:local="clr-namespace:MyTeamTasksWpf.View.vProjeto"
         mc:Ignorable="d"
-        Title="Gerenciar usuarios" Height="850" Width="1280" Loaded="Window_Loaded">
+        Title="Gerenciar projetos" Height="850" Width="1280" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="46*"/>
@@ -22,16 +22,15 @@
         <Button x:Name="btnEditar" Content="Editar" Grid.Column="1" HorizontalAlignment="Left" Margin="28,468,0,0" Grid.Row="1" VerticalAlignment="Top" Width="94" Height="36" Click="BtnEditar_Click" TabIndex="5"/>
         <Button x:Name="btnPesquisar" Content="Pesquisar" Grid.Column="1" HorizontalAlignment="Left" Margin="28,520,0,0" Grid.Row="1" VerticalAlignment="Top" Width="94" Height="36" Click="BtnPesquisar_Click" TabIndex="6"/>
         <Button x:Name="btnExcluir" Content="Excluir" Grid.Column="1" HorizontalAlignment="Left" Margin="28,627,0,0" Grid.Row="1" VerticalAlignment="Top" Width="94" Height="36" TabIndex="8" Click="BtnExcluir_Click"/>
-        <Button x:Name="btnListar" Content="Listar" Grid.Column="1" HorizontalAlignment="Left" Margin="28,574,0,0" Grid.Row="1" VerticalAlignment="Top" Width="94" Height="36" TabIndex="7"/>
+        <Button x:Name="btnListar" Content="Listar" Grid.Column="1" HorizontalAlignment="Left" Margin="28,574,0,0" Grid.Row="1" VerticalAlignment="Top" Width="94" Height="36" TabIndex="7" Click="BtnListar_Click"/>
         <TextBox x:Name="txtId" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="32,134,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" IsEnabled="False" TabIndex="999"/>
         <Label x:Name="lbId" Content="ID" Grid.Column="1" HorizontalAlignment="Left" Margin="28,108,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <Label x:Name="lbCargo" Content="Cargo" Grid.Column="1" HorizontalAlignment="Left" Margin="28,169,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtCargo" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="32,195,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" TabIndex="1"/>
-        <TextBox x:Name="txtSenha" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="32,315,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" TabIndex="3"/>
-        <TextBox x:Name="txtNickName" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="32,254,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" TabIndex="2"/>
-        <Label Content="Nickname" Grid.Column="1" HorizontalAlignment="Left" Margin="28,228,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <Label Content="Senha" Grid.Column="1" HorizontalAlignment="Left" Margin="28,289,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <Label Content="Gerenciar usuários" Grid.Column="1" HorizontalAlignment="Left" Margin="28,33,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="20"/>
+        <Label x:Name="lbNome" Content="Nome" Grid.Column="1" HorizontalAlignment="Left" Margin="28,169,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtNome" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="32,195,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" TabIndex="1"/>
+        <TextBox x:Name="txtStatus" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="32,254,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" TabIndex="2"/>
+        <Label x:Name="lbStatus" Content="Status" Grid.Column="1" HorizontalAlignment="Left" Margin="28,228,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="lbCliente" Content="Cliente" Grid.Column="1" HorizontalAlignment="Left" Margin="28,289,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="Gerenciar projetos" Grid.Column="1" HorizontalAlignment="Left" Margin="28,33,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="20"/>
         <Rectangle Grid.Column="1" HorizontalAlignment="Left" Height="1" Margin="35,69,0,0" Grid.Row="1" VerticalAlignment="Top" Width="159" Fill="#FFE0E0E0"/>
         <Label x:Name="lbMensagem" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="150,377,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="18" Width="700" Height="38" Foreground="#FF197637" FontWeight="Bold"/>
         <Button x:Name="btnAtualizarGrid"  Grid.Column="1" HorizontalAlignment="Left" Margin="1046,377,0,0" Grid.Row="1" VerticalAlignment="Top" Width="52" Height="33" Click="BtnAtualizarGrid_Click">
@@ -43,12 +42,6 @@
                 </Viewbox>
             </StackPanel>
         </Button>
-        <StackPanel Grid.Column="1" HorizontalAlignment="Left" Height="138" Margin="359,116,0,0" Grid.Row="1" VerticalAlignment="Top" Width="491">
-            <Label Content="Observações" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{x:Null}" Width="471" HorizontalContentAlignment="Left" Margin="10,0" Foreground="#FF6C6C6C"/>
-            <Label Content="1º Para editar/listar/excluir um usuario. primeiro preencha seu nome e clique em pesquisar" Foreground="#FF6C6C6C"/>
-            <Label Content="2º Não é possivel a exclusão de um usuario que esteja associado a alguma tarefa/projeto" Foreground="#FF6C6C6C"/>
-            <Label Content="3º Atualize a grid a cada nova mudança nos registros" Foreground="#FF6C6C6C"/>
-        </StackPanel>
-
+        <ComboBox x:Name="cbClientes" Grid.Column="1" HorizontalAlignment="Left" Margin="35,320,0,0" Grid.Row="1" VerticalAlignment="Top" Width="227" Height="30"/>
     </Grid>
 </Window>

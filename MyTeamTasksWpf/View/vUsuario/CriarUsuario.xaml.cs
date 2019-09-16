@@ -133,6 +133,16 @@ namespace MyTeamTasksWpf.View.vUsuario
                 MensagemDeConfirmacaoOuErro("Preencha os campos antes de editar !");
             }
         }
+                        
+        private void BtnAtualizarGrid_Click(object sender, RoutedEventArgs e)
+        {
+            dglista.ItemsSource = UsuarioDAO.ListarUsuarios();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            dglista.ItemsSource = UsuarioDAO.ListarUsuarios();
+        }
 
         private void MensagemDeConfirmacaoOuErro(String message, int Interval = 3000)
         {
@@ -149,21 +159,12 @@ namespace MyTeamTasksWpf.View.vUsuario
             timer.Start(); // Inicia o timer
         }
 
-        public void LimparCampos() {
+        public void LimparCampos()
+        {
             txtId.Clear();
             txtCargo.Clear();
             txtNickName.Clear();
             txtSenha.Clear();
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            dglista.ItemsSource = UsuarioDAO.ListarUsuarios();
-        }
-
-        private void BtnAtualizarGrid_Click(object sender, RoutedEventArgs e)
-        {
-            dglista.ItemsSource = UsuarioDAO.ListarUsuarios();
         }
     }
 }

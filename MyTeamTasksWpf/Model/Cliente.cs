@@ -20,11 +20,12 @@ namespace MyTeamTasksWpf.Model
         public int ClienteId { get; set; }
         public string Nome { get; set; }
         public DateTime CriadoEm { get; set; }
+        public List<Projeto> Projetos { get; set; }
 
         public override string ToString()
         {
-            return "ID: " +ClienteId +
-                "\nNome: " + Nome;
+            return Nome;
+                
         }
     }
 

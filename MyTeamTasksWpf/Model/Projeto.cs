@@ -18,7 +18,7 @@ namespace MyTeamTasksWpf.Model
         [Key]
         public int ProjetoId { get; set; }
         public string Nome { get; set; }
-        public bool Status { get; set; }
+        public string Status { get; set; }
         public Cliente Cliente { get; set; }
         public DateTime CriadoEm { get; set; }
 
