@@ -81,6 +81,12 @@
     <Compile Include="Migrations\201909152331253_AdicionadoProjetoEmCliente.Designer.cs">
       <DependentUpon>201909152331253_AdicionadoProjetoEmCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\vDashboard\Dashboard.xaml.cs">
+      <DependentUpon>Dashboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\vLogin\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\vProjeto\CriarProjeto.xaml.cs">
       <DependentUpon>CriarProjeto.xaml</DependentUpon>
     </Compile>
@@ -94,6 +100,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\vDashboard\Dashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\vLogin\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\vProjeto\CriarProjeto.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -169,7 +183,6 @@
     <Folder Include="Img\" />
     <Folder Include="Util\" />
     <Folder Include="View\vCliente\" />
-    <Folder Include="View\vLogin\" />
     <Folder Include="View\vPessoa\" />
   </ItemGroup>
   <ItemGroup>
