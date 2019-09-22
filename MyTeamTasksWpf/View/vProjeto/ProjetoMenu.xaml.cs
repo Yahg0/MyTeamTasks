@@ -1,5 +1,5 @@
 ﻿using MyTeamTasksWpf.View.Tarefa;
-using MyTeamTasksWpf.View.vProjeto;
+using MyTeamTasksWpf.View.vDashboard;
 using MyTeamTasksWpf.View.vTarefa;
 using System;
 using System.Collections.Generic;
@@ -15,23 +15,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace MyTeamTasksWpf.View.vDashboard
+namespace MyTeamTasksWpf.View.vProjeto
 {
     /// <summary>
-    /// Interaction logic for Dashboard.xaml
+    /// Interaction logic for ProjetoMenu.xaml
     /// </summary>
-    public partial class Dashboard : Window
+    public partial class ProjetoMenu : Window
     {
-        public Dashboard()
+        public ProjetoMenu()
         {
             InitializeComponent();
-        }
-
-        private void BtnProjeto_Click(object sender, RoutedEventArgs e)
-        {
-            ProjetoMenu projetoMenu = new ProjetoMenu();
-            projetoMenu.Show();
-            this.Close();
         }
 
         private void BtnTarefas_Click(object sender, RoutedEventArgs e)
@@ -45,7 +38,18 @@ namespace MyTeamTasksWpf.View.vDashboard
         {
             CriarTarefa criarTarefa = new CriarTarefa();
             criarTarefa.Show();
-            
+        }
+
+        private void BtnProjeto_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnDashboard_Click_1(object sender, RoutedEventArgs e)
+        {
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
+            this.Close();
         }
     }
 }

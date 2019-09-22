@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyTeamTasksWpf.View.vProjeto"
         mc:Ignorable="d"
-        Title="Gerenciar projetos" Height="850" Width="1280" Loaded="Window_Loaded">
+        Title="Gerenciar projetos" Height="850" Width="1280" Loaded="Window_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="46*"/>

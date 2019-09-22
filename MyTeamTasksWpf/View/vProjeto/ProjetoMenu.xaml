@@ -1,11 +1,11 @@
-﻿<Window x:Class="MyTeamTasksWpf.View.vDashboard.Dashboard"
+﻿<Window x:Class="MyTeamTasksWpf.View.vProjeto.ProjetoMenu"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MyTeamTasksWpf.View.vDashboard"
+        xmlns:local="clr-namespace:MyTeamTasksWpf.View.vProjeto"
         mc:Ignorable="d"
-        Title="Dashboard" Height="850" Width="1280" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Projeto" Height="850" Width="1280" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="46*"/>
@@ -18,7 +18,7 @@
             <ColumnDefinition Width="60*"/>
         </Grid.ColumnDefinitions>
         <Rectangle Fill="#FF1D549E" HorizontalAlignment="Left" Height="48" Stroke="Black" VerticalAlignment="Top" Width="1274" Grid.ColumnSpan="3"/>
-        <Button x:Name="btnDashboard" Content="Dashboard" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="94" Height="48" FontSize="10"/>
+        <Button x:Name="btnDashboard" Content="Dashboard" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="94" Height="48" FontSize="10" Click="BtnDashboard_Click_1"/>
         <Button x:Name="btnProjeto" Content="Projeto" Grid.Column="1" HorizontalAlignment="Left" Margin="94,0,0,0" VerticalAlignment="Top" Width="94" Height="48" FontSize="10" Click="BtnProjeto_Click"/>
         <Button x:Name="btnTarefas" Content="Tarefas" Grid.Column="1" HorizontalAlignment="Left" Margin="188,0,0,0" VerticalAlignment="Top" Width="94" Height="48" FontSize="10" Click="BtnTarefas_Click"/>
         <Button x:Name="btnCriar" Content="Criar" Grid.Column="1" HorizontalAlignment="Left" Margin="282,0,0,0" VerticalAlignment="Top" Width="94" Height="48" FontSize="10" Click="BtnCriar_Click"/>
