@@ -82,6 +82,9 @@
     <Compile Include="Migrations\201909152331253_AdicionadoProjetoEmCliente.Designer.cs">
       <DependentUpon>201909152331253_AdicionadoProjetoEmCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\vAdmin\AdminMenu.xaml.cs">
+      <DependentUpon>AdminMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\vDashboard\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
@@ -107,6 +110,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\vAdmin\AdminMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\vDashboard\Dashboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

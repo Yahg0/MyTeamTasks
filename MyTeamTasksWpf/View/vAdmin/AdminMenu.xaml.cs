@@ -1,7 +1,8 @@
 ﻿using MyTeamTasksWpf.View.Tarefa;
-using MyTeamTasksWpf.View.vAdmin;
+using MyTeamTasksWpf.View.vDashboard;
 using MyTeamTasksWpf.View.vProjeto;
 using MyTeamTasksWpf.View.vTarefa;
+using MyTeamTasksWpf.View.vUsuario;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,16 +17,23 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace MyTeamTasksWpf.View.vDashboard
+namespace MyTeamTasksWpf.View.vAdmin
 {
     /// <summary>
-    /// Interaction logic for Dashboard.xaml
+    /// Interaction logic for AdminMenu.xaml
     /// </summary>
-    public partial class Dashboard : Window
+    public partial class AdminMenu : Window
     {
-        public Dashboard()
+        public AdminMenu()
         {
             InitializeComponent();
+        }
+
+        private void BtnDashboard_Click(object sender, RoutedEventArgs e)
+        {
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
+            this.Close();
         }
 
         private void BtnProjeto_Click(object sender, RoutedEventArgs e)
@@ -46,14 +54,24 @@ namespace MyTeamTasksWpf.View.vDashboard
         {
             CriarTarefa criarTarefa = new CriarTarefa();
             criarTarefa.Show();
-            
         }
 
-        private void BtnConfigurações_Click(object sender, RoutedEventArgs e)
+        private void BtnClientes_Click(object sender, RoutedEventArgs e)
         {
-            AdminMenu adminMenu = new AdminMenu();
-            adminMenu.Show();
-            this.Close();
+
+        }
+
+        private void BtnUsuarios_Click(object sender, RoutedEventArgs e)
+        {
+            CriarUsuario criarUsuario = new CriarUsuario();
+            criarUsuario.Show();
+        }
+
+        private void BtnProjetos_Click(object sender, RoutedEventArgs e)
+        {
+            CriarProjeto criarProjeto = new CriarProjeto();
+            criarProjeto.Show();
+            
         }
     }
 }

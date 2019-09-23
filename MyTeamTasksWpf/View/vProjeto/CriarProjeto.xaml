@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyTeamTasksWpf.View.vProjeto"
         mc:Ignorable="d"
-        Title="Gerenciar projetos" Height="850" Width="1280" Loaded="Window_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid>
+        Title="Gerenciar projetos" Height="706" Width="1080" Loaded="Window_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="#FFF3F3F3">
+    <Grid Margin="0,0,4,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="46*"/>
             <RowDefinition Height="686*"/>
@@ -17,23 +17,23 @@
             <ColumnDefinition Width="1153*"/>
             <ColumnDefinition Width="60*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btnInserir" Content="Inserir" HorizontalAlignment="Left" Margin="28,415,0,0" VerticalAlignment="Top" Width="94" Height="36" Grid.Row="1" Grid.Column="1" Click="BtnInserir_Click" TabIndex="4"/>
-        <DataGrid x:Name="dglista" Grid.Column="1" HorizontalAlignment="Center" Height="248" Margin="154,415,45,46" Grid.Row="1" VerticalAlignment="Center" Width="953" IsReadOnly="True"/>
-        <Button x:Name="btnEditar" Content="Editar" Grid.Column="1" HorizontalAlignment="Left" Margin="28,468,0,0" Grid.Row="1" VerticalAlignment="Top" Width="94" Height="36" Click="BtnEditar_Click" TabIndex="5"/>
-        <Button x:Name="btnPesquisar" Content="Pesquisar" Grid.Column="1" HorizontalAlignment="Left" Margin="28,520,0,0" Grid.Row="1" VerticalAlignment="Top" Width="94" Height="36" Click="BtnPesquisar_Click" TabIndex="6"/>
-        <Button x:Name="btnExcluir" Content="Excluir" Grid.Column="1" HorizontalAlignment="Left" Margin="28,627,0,0" Grid.Row="1" VerticalAlignment="Top" Width="94" Height="36" TabIndex="8" Click="BtnExcluir_Click"/>
-        <Button x:Name="btnListar" Content="Listar" Grid.Column="1" HorizontalAlignment="Left" Margin="28,574,0,0" Grid.Row="1" VerticalAlignment="Top" Width="94" Height="36" TabIndex="7" Click="BtnListar_Click"/>
-        <TextBox x:Name="txtId" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="32,134,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" IsEnabled="False" TabIndex="999"/>
-        <Label x:Name="lbId" Content="ID" Grid.Column="1" HorizontalAlignment="Left" Margin="28,108,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <Label x:Name="lbNome" Content="Nome" Grid.Column="1" HorizontalAlignment="Left" Margin="28,169,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtNome" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="32,195,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" TabIndex="1"/>
-        <TextBox x:Name="txtStatus" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="32,254,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" TabIndex="2"/>
-        <Label x:Name="lbStatus" Content="Status" Grid.Column="1" HorizontalAlignment="Left" Margin="28,228,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <Label x:Name="lbCliente" Content="Cliente" Grid.Column="1" HorizontalAlignment="Left" Margin="28,289,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <Label Content="Gerenciar projetos" Grid.Column="1" HorizontalAlignment="Left" Margin="28,33,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="20"/>
-        <Rectangle Grid.Column="1" HorizontalAlignment="Left" Height="1" Margin="35,69,0,0" Grid.Row="1" VerticalAlignment="Top" Width="159" Fill="#FFE0E0E0"/>
-        <Label x:Name="lbMensagem" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="150,377,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="18" Width="700" Height="38" Foreground="#FF197637" FontWeight="Bold"/>
-        <Button x:Name="btnAtualizarGrid"  Grid.Column="1" HorizontalAlignment="Left" Margin="1046,377,0,0" Grid.Row="1" VerticalAlignment="Top" Width="52" Height="33" Click="BtnAtualizarGrid_Click">
+        <Button x:Name="btnInserir" Content="Inserir" HorizontalAlignment="Left" Margin="4,369,0,0" VerticalAlignment="Top" Width="94" Height="36" Grid.Row="1" Grid.Column="1" Click="BtnInserir_Click" TabIndex="4" BorderBrush="{x:Null}"/>
+        <DataGrid x:Name="dglista" Grid.Column="1" HorizontalAlignment="Center" Height="180" Margin="126,369,10,37" Grid.Row="1" VerticalAlignment="Center" Width="833" IsReadOnly="True"/>
+        <Button x:Name="btnEditar" Content="Editar" Grid.Column="1" HorizontalAlignment="Left" Margin="4,405,0,0" Grid.Row="1" VerticalAlignment="Top" Width="94" Height="36" Click="BtnEditar_Click" TabIndex="5" BorderBrush="{x:Null}"/>
+        <Button x:Name="btnPesquisar" Content="Pesquisar" Grid.Column="1" HorizontalAlignment="Left" Margin="4,441,0,0" Grid.Row="1" VerticalAlignment="Top" Width="94" Height="36" Click="BtnPesquisar_Click" TabIndex="6" BorderBrush="{x:Null}"/>
+        <Button x:Name="btnExcluir" Content="Excluir" Grid.Column="1" HorizontalAlignment="Left" Margin="4,513,0,0" Grid.Row="1" VerticalAlignment="Top" Width="94" Height="36" TabIndex="8" Click="BtnExcluir_Click" BorderBrush="{x:Null}"/>
+        <Button x:Name="btnListar" Content="Listar" Grid.Column="1" HorizontalAlignment="Left" Margin="4,477,0,0" Grid.Row="1" VerticalAlignment="Top" Width="94" Height="36" TabIndex="7" Click="BtnListar_Click" BorderBrush="{x:Null}"/>
+        <TextBox x:Name="txtId" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="8,88,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" IsEnabled="False" TabIndex="999"/>
+        <Label x:Name="lbId" Content="ID" Grid.Column="1" HorizontalAlignment="Left" Margin="4,62,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="lbNome" Content="Nome" Grid.Column="1" HorizontalAlignment="Left" Margin="4,123,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtNome" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="8,149,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" TabIndex="1"/>
+        <TextBox x:Name="txtStatus" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="8,208,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" TabIndex="2"/>
+        <Label x:Name="lbStatus" Content="Status" Grid.Column="1" HorizontalAlignment="Left" Margin="4,182,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="lbCliente" Content="Cliente" Grid.Column="1" HorizontalAlignment="Left" Margin="4,243,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="Gerenciar projetos" Grid.Column="1" HorizontalAlignment="Left" Margin="4,35,0,0" VerticalAlignment="Top" FontSize="20" Grid.RowSpan="2"/>
+        <Rectangle Grid.Column="1" HorizontalAlignment="Left" Height="1" Margin="11,23,0,0" Grid.Row="1" VerticalAlignment="Top" Width="159" Fill="#FFE0E0E0"/>
+        <Label x:Name="lbMensagem" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="126,331,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="18" Width="700" Height="38" Foreground="#FF197637" FontWeight="Bold"/>
+        <Button x:Name="btnAtualizarGrid"  Grid.Column="1" HorizontalAlignment="Left" Margin="897,331,0,0" Grid.Row="1" VerticalAlignment="Top" Width="52" Height="33" Click="BtnAtualizarGrid_Click">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="center">
                 <Viewbox Width="30" Height="25" HorizontalAlignment="Center" VerticalAlignment="center">
                     <Canvas Width="24" Height="24" HorizontalAlignment="Center" VerticalAlignment="center">
@@ -42,6 +42,6 @@
                 </Viewbox>
             </StackPanel>
         </Button>
-        <ComboBox x:Name="cbClientes" Grid.Column="1" HorizontalAlignment="Left" Margin="35,320,0,0" Grid.Row="1" VerticalAlignment="Top" Width="227" Height="30"/>
+        <ComboBox x:Name="cbClientes" Grid.Column="1" HorizontalAlignment="Left" Margin="11,274,0,0" Grid.Row="1" VerticalAlignment="Top" Width="227" Height="30"/>
     </Grid>
 </Window>
