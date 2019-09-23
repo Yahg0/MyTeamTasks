@@ -3,8 +3,31 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MyTeamTasksWpf.View.Tarefa"
+        xmlns:local="clr-namespace:MyTeamTasksWpf.View.vTarefa"
         mc:Ignorable="d"
         Title="CriarTarefa" Height="708" Width="1080" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid/>
+    <Grid>
+        <Label Content="Criar tarefa" HorizontalAlignment="Left" Margin="45,19,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <Separator Width="1000" Margin="52,61,22,603" Background="#FFD8D8D8"/>
+        <TextBox x:Name="txtNomeTarefa" HorizontalAlignment="Left" Height="30" Margin="91,136,0,0" TextWrapping="Wrap" Text="Nome tarefa" VerticalAlignment="Top" Width="230"/>
+        <TextBox x:Name="txtIdTarefa" HorizontalAlignment="Left" Height="30" Margin="52,136,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="34"/>
+        <Button x:Name="btnInserir" Content="Criar" HorizontalAlignment="Left" Margin="52,205,0,0" VerticalAlignment="Top" Width="94" Height="36" BorderBrush="{x:Null}"/>
+        <Button x:Name="btnLimparCampos" Content="Limpar" HorizontalAlignment="Left" Margin="151,205,0,0" VerticalAlignment="Top" Width="94" Height="36" BorderBrush="{x:Null}"/>
+        <Label Content="Detalhes" HorizontalAlignment="Left" Margin="52,255,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Separator Margin="131,268,557,396" Background="#FFD8D8D8"/>
+        <Label Content="Tipo:" HorizontalAlignment="Left" Margin="64,289,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="txtTipo" HorizontalAlignment="Left" Height="23" Margin="109,294,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Status:" HorizontalAlignment="Left" Margin="321,289,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="txtStatus" HorizontalAlignment="Left" Height="23" Margin="374,294,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cbProjetos" HorizontalAlignment="Left" Margin="52,90,0,0" VerticalAlignment="Top" Width="269" Height="30"/>
+        <TextBox x:Name="txtPrioridade" HorizontalAlignment="Left" Height="23" Margin="145,334,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Priotidade:" HorizontalAlignment="Left" Margin="64,328,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Resolução:" HorizontalAlignment="Left" Margin="321,328,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="txtResolucao" HorizontalAlignment="Left" Height="23" Margin="397,334,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Descrição" HorizontalAlignment="Left" Margin="52,375,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Separator Margin="139,388,557,276" Background="#FFD8D8D8"/>
+
+
+
+    </Grid>
 </Window>

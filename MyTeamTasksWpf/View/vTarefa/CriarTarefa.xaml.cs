@@ -23,5 +23,7 @@ namespace MyTeamTasksWpf.View.Tarefa
         {
             InitializeComponent();
         }
+
+       
     }
 }

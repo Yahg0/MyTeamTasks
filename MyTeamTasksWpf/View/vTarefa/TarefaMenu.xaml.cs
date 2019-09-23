@@ -1,4 +1,5 @@
 ﻿using MyTeamTasksWpf.View.Tarefa;
+using MyTeamTasksWpf.View.vAdmin;
 using MyTeamTasksWpf.View.vDashboard;
 using MyTeamTasksWpf.View.vProjeto;
 using System;
@@ -50,6 +51,13 @@ namespace MyTeamTasksWpf.View.vTarefa
         {
             Dashboard dashboard = new Dashboard();
             dashboard.Show();
+            this.Close();
+        }
+
+        private void BtnConfigurações_Click(object sender, RoutedEventArgs e)
+        {
+            AdminMenu adminMenu = new AdminMenu();
+            adminMenu.Show();
             this.Close();
         }
     }
