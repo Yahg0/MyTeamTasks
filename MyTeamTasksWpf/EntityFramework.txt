@@ -14,3 +14,8 @@ Visualização do banco
 1 - View -> SQL Server Object Explorer
 
 OBS: Sempre que adicionamos uma nova model, isso ira geral uma nova tabela, logo temos que declarar a nova model no context
+
+Subir a infra no lab
+- Para subir a instancia do sql server, primeiro desinstalar o EF da Solution
+- Depois, acessar o app.config e excluir as tags <EntityFramework></EntityFramework e tudo que estiver dentro dela
+- Excluir a section     <section name="entityFramework" .... />
