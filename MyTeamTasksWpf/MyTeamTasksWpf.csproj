@@ -77,6 +77,7 @@
     <Compile Include="DAL\LoginDAO.cs" />
     <Compile Include="DAL\ProjetoDAO.cs" />
     <Compile Include="DAL\SingletonContext.cs" />
+    <Compile Include="DAL\TarefaDAO.cs" />
     <Compile Include="DAL\UsuarioDAO.cs" />
     <Compile Include="Migrations\201909152331253_AdicionadoProjetoEmCliente.cs" />
     <Compile Include="Migrations\201909152331253_AdicionadoProjetoEmCliente.Designer.cs">

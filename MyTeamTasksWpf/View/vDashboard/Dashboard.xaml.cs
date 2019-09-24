@@ -1,20 +1,9 @@
-﻿using MyTeamTasksWpf.View.Tarefa;
+﻿using MyTeamTasksWpf.View.vTarefa;
 using MyTeamTasksWpf.View.vAdmin;
 using MyTeamTasksWpf.View.vProjeto;
-using MyTeamTasksWpf.View.vTarefa;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
+using MyTeamTasksWpf.View.vLogin;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace MyTeamTasksWpf.View.vDashboard
 {
@@ -27,6 +16,7 @@ namespace MyTeamTasksWpf.View.vDashboard
         {
             InitializeComponent();
         }
+        
 
         private void BtnProjeto_Click(object sender, RoutedEventArgs e)
         {
@@ -55,5 +45,15 @@ namespace MyTeamTasksWpf.View.vDashboard
             adminMenu.Show();
             this.Close();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            //Login login = new Login();
+            //lbUserLogado.Content = login.userLogado.ToString();
+            //lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
+
+        }
+
+
     }
 }

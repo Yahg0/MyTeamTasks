@@ -25,9 +25,7 @@ namespace MyTeamTasksWpf.Model
 
         public override string ToString()
         {
-            return "ID: " +UsuarioId+
-                "\nCargo: " +Cargo+
-                "\nNickname: " + Nickname;
+            return Nickname;
         }
     }
 }

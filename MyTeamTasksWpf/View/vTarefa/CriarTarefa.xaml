@@ -1,31 +1,48 @@
-﻿<Window x:Class="MyTeamTasksWpf.View.Tarefa.CriarTarefa"
+﻿<Window x:Class="MyTeamTasksWpf.View.vTarefa.CriarTarefa"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyTeamTasksWpf.View.vTarefa"
         mc:Ignorable="d"
-        Title="CriarTarefa" Height="708" Width="1080" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="CriarTarefa" Height="708" Width="1080" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Background="#FFF3F3F3">
     <Grid>
         <Label Content="Criar tarefa" HorizontalAlignment="Left" Margin="45,19,0,0" VerticalAlignment="Top" FontSize="24"/>
         <Separator Width="1000" Margin="52,61,22,603" Background="#FFD8D8D8"/>
-        <TextBox x:Name="txtNomeTarefa" HorizontalAlignment="Left" Height="30" Margin="91,136,0,0" TextWrapping="Wrap" Text="Nome tarefa" VerticalAlignment="Top" Width="230"/>
-        <TextBox x:Name="txtIdTarefa" HorizontalAlignment="Left" Height="30" Margin="52,136,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="34"/>
-        <Button x:Name="btnInserir" Content="Criar" HorizontalAlignment="Left" Margin="52,205,0,0" VerticalAlignment="Top" Width="94" Height="36" BorderBrush="{x:Null}"/>
+        <TextBox x:Name="txtNomeTarefa" HorizontalAlignment="Left" Height="30" Margin="91,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Opacity="0.6"/>
+        <TextBox x:Name="txtIdTarefa" HorizontalAlignment="Left" Height="30" Margin="52,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="34" IsEnabled="False" Opacity="0.6"/>
+        <Button x:Name="btnInserir" Content="Criar" HorizontalAlignment="Left" Margin="52,205,0,0" VerticalAlignment="Top" Width="94" Height="36" BorderBrush="{x:Null}" Click="BtnInserir_Click"/>
         <Button x:Name="btnLimparCampos" Content="Limpar" HorizontalAlignment="Left" Margin="151,205,0,0" VerticalAlignment="Top" Width="94" Height="36" BorderBrush="{x:Null}"/>
         <Label Content="Detalhes" HorizontalAlignment="Left" Margin="52,255,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Separator Margin="131,268,557,396" Background="#FFD8D8D8"/>
         <Label Content="Tipo:" HorizontalAlignment="Left" Margin="64,289,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox x:Name="txtTipo" HorizontalAlignment="Left" Height="23" Margin="109,294,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtTipo" HorizontalAlignment="Left" Height="23" Margin="145,294,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Opacity="0.6"/>
         <Label Content="Status:" HorizontalAlignment="Left" Margin="321,289,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox x:Name="txtStatus" HorizontalAlignment="Left" Height="23" Margin="374,294,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="cbProjetos" HorizontalAlignment="Left" Margin="52,90,0,0" VerticalAlignment="Top" Width="269" Height="30"/>
-        <TextBox x:Name="txtPrioridade" HorizontalAlignment="Left" Height="23" Margin="145,334,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtStatus" HorizontalAlignment="Left" Height="23" Margin="397,294,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Opacity="0.6"/>
+        <ComboBox x:Name="cbProjetos" HorizontalAlignment="Left" Margin="52,90,0,0" VerticalAlignment="Top" Width="269" Height="30" Opacity="0.6"/>
+        <TextBox x:Name="txtPrioridade" HorizontalAlignment="Left" Height="23" Margin="145,334,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Opacity="0.6"/>
         <Label Content="Priotidade:" HorizontalAlignment="Left" Margin="64,328,0,0" VerticalAlignment="Top" FontSize="14"/>
         <Label Content="Resolução:" HorizontalAlignment="Left" Margin="321,328,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox x:Name="txtResolucao" HorizontalAlignment="Left" Height="23" Margin="397,334,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtResolucao" HorizontalAlignment="Left" Height="23" Margin="397,334,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Opacity="0.6"/>
         <Label Content="Descrição" HorizontalAlignment="Left" Margin="52,375,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Separator Margin="139,388,557,276" Background="#FFD8D8D8"/>
+        <TextBox x:Name="txtDesc" HorizontalAlignment="Left" Height="23" Margin="61,420,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Opacity="0.6"/>
+        <Label Content="Pessoas" HorizontalAlignment="Left" Margin="570,255,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Separator Margin="643,268,45,396" Background="#FFD8D8D8"/>
+        <Label Content="Datas" HorizontalAlignment="Left" Margin="570,375,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Separator Margin="625,388,45,276" Background="#FFD8D8D8"/>
+        <Label Content="Assinatura:" HorizontalAlignment="Left" Margin="593,289,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Cliente:" HorizontalAlignment="Left" Margin="824,289,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Requisitante:" HorizontalAlignment="Left" Margin="593,328,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Criado em:" HorizontalAlignment="Left" Margin="593,414,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="dtCriadoEm" HorizontalAlignment="Left" Height="23" Margin="669,418,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" Opacity="0.6"/>
+        <ComboBox x:Name="cbAssinatura" HorizontalAlignment="Left" Margin="675,294,0,0" VerticalAlignment="Top" Width="120" Opacity="0.6"/>
+        <ComboBox x:Name="cbRequisitante" HorizontalAlignment="Left" Margin="682,334,0,0" VerticalAlignment="Top" Width="120" Opacity="0.6"/>
+        <ComboBox x:Name="cbCliente" HorizontalAlignment="Left" Margin="880,294,0,0" VerticalAlignment="Top" Width="120" Opacity="0.59"/>
+        <Label x:Name="lbMensagem" Content="" HorizontalAlignment="Left" Margin="308,250,0,0" VerticalAlignment="Top" Width="209"/>
+        <Label x:Name="lbCampoObrigatorio" Content="*" HorizontalAlignment="Left" Margin="326,136,0,0" VerticalAlignment="Top" FontSize="18" Foreground="#FFC13131" Height="30"/>
+        <Label x:Name="lbCampoObrigatorio_Copy" Content="*" HorizontalAlignment="Left" Margin="270,289,0,0" VerticalAlignment="Top" FontSize="18" Foreground="#FFC13131" Height="22"/>
+        <Label x:Name="lbCampoObrigatorio_Copy1" Content="*" HorizontalAlignment="Left" Margin="807,328,0,0" VerticalAlignment="Top" FontSize="18" Foreground="#FFC13131" Height="28"/>
 
 
 

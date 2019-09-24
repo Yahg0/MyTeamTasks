@@ -19,11 +19,11 @@
         </Grid.ColumnDefinitions>
         <Rectangle Fill="#FF1D549E" HorizontalAlignment="Left" Height="404" VerticalAlignment="Top" Width="1272" Grid.RowSpan="2" Grid.ColumnSpan="3"/>
         <Rectangle Grid.Column="1" Fill="White" HorizontalAlignment="Center" Height="420" Margin="238,168,248,121" Grid.Row="1" VerticalAlignment="Top" Width="666"/>
-        <TextBox x:Name="txtUser" Grid.Column="1" HorizontalAlignment="Center" Height="30" Margin="360,370,372,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="420" FontSize="18"/>
-        <PasswordBox x:Name="txtSenha" Grid.Column="1" HorizontalAlignment="Left" Margin="360,417,0,0" Grid.Row="1" VerticalAlignment="Top" Width="420" Height="30" FontSize="18"/>
-        <Button x:Name="btnEntrar" Grid.Column="1" HorizontalAlignment="Left" Margin="464,492,0,0" Grid.Row="1" VerticalAlignment="Top" Width="200" Height="40" Click="BtnEntrar_Click">
-            <Button Content="Button" Width="75"/>
-        </Button>
+        <TextBox x:Name="txtUser" Grid.Column="1" HorizontalAlignment="Center" Height="30" Margin="360,370,372,0" Padding="3,0,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="420" FontSize="14"/>
+        <PasswordBox x:Name="txtSenha" Grid.Column="1" HorizontalAlignment="Left" Margin="360,417,0,0" Grid.Row="1" Padding="3,0,0,0" VerticalAlignment="Top" Width="420" Height="30" FontSize="14"/>
+        <Button x:Name="btnEntrar" Grid.Column="1" HorizontalAlignment="Left" Margin="464,492,0,0" Grid.Row="1" VerticalAlignment="Top" Width="200" Content="Entrar" Height="40" Click="BtnEntrar_Click"/>
+
+
         <Viewbox Width="100" Height="100" Grid.Column="1" Grid.Row="1" Margin="0,0,25,150">
             <Canvas Width="24" Height="24">
                 <Path Data="M12,19.2C9.5,19.2 7.29,17.92 6,16C6.03,14 10,12.9 12,12.9C14,12.9 17.97,14 18,16C16.71,17.92 14.5,19.2 12,19.2M12,5A3,3 0 0,1 15,8A3,3 0 0,1 12,11A3,3 0 0,1 9,8A3,3 0 0,1 12,5M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z" Fill="Gray" />

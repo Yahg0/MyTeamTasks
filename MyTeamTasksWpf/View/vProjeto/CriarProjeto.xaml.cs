@@ -168,5 +168,7 @@ namespace MyTeamTasksWpf.View.vProjeto
             txtStatus.Clear();
             cbClientes.SelectedValue = "";
         }
+
+        
     }
 }

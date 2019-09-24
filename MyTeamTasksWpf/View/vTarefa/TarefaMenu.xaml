@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyTeamTasksWpf.View.vTarefa"
         mc:Ignorable="d"
-        Title="Tarefas" Height="850" Width="1280" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Tarefas" Height="850" Width="1280" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="46*"/>
@@ -36,5 +36,7 @@
                 </Canvas>
             </Viewbox>
         </Button>
+        <Label Content="Listagem das tarefas" Grid.Column="1" HorizontalAlignment="Left" Margin="0,40,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="24"/>
+        <DataGrid x:Name="dgTarefas" Grid.Column="1" HorizontalAlignment="Left" Height="491" Margin="10,112,0,0" Grid.Row="1" VerticalAlignment="Top" Width="1032"/>
     </Grid>
 </Window>

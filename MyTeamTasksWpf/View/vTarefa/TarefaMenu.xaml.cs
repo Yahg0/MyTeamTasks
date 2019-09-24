@@ -1,4 +1,5 @@
-﻿using MyTeamTasksWpf.View.Tarefa;
+﻿using MyTeamTasksWpf.DAL;
+using MyTeamTasksWpf.View.vTarefa;
 using MyTeamTasksWpf.View.vAdmin;
 using MyTeamTasksWpf.View.vDashboard;
 using MyTeamTasksWpf.View.vProjeto;
@@ -59,6 +60,11 @@ namespace MyTeamTasksWpf.View.vTarefa
             AdminMenu adminMenu = new AdminMenu();
             adminMenu.Show();
             this.Close();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            dgTarefas.ItemsSource = TarefaDAO.ListarTarefas();
         }
     }
 }

@@ -24,10 +24,8 @@ namespace MyTeamTasksWpf.Model
 
         public override string ToString()
         {
-            return "ID: " + ProjetoId +
-                "\nNome: " + Nome +
-                "\nStatus: " + Status +
-                "\nCliente: " + Cliente.Nome;
+            return Nome;
+               
         }
     }
 }
