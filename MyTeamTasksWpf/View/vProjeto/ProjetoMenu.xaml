@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyTeamTasksWpf.View.vProjeto"
         mc:Ignorable="d"
-        Title="Projeto" Height="850" Width="1280" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Projeto" Height="750" Width="1280" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="46*"/>
