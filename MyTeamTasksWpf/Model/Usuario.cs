@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace MyTeamTasksWpf.Model
 {
     [Table("Usuarios")]
-    class Usuario
+    class Usuario:Pessoa
     {
         public Usuario()
         {

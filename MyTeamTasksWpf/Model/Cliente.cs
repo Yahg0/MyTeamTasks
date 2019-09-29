@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace MyTeamTasksWpf.Model
 {
     [Table("Clientes")]
-    class Cliente
+    class Cliente:Pessoa
     {
         public Cliente()
         {
@@ -18,7 +18,6 @@ namespace MyTeamTasksWpf.Model
 
         [Key]
         public int ClienteId { get; set; }
-        public string Nome { get; set; }
         public DateTime CriadoEm { get; set; }
         public List<Projeto> Projetos { get; set; }
 

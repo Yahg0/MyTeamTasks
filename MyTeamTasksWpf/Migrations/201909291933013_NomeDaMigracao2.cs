@@ -1,22 +1,12 @@
-namespace MyTeamTasksWpf.Migrations
+﻿namespace MyTeamTasksWpf.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class CriacaoDasModels : DbMigration
+    public partial class NomeDaMigracao2 : DbMigration
     {
         public override void Up()
         {
-            CreateTable(
-                "dbo.Clientes",
-                c => new
-                    {
-                        ClienteId = c.Int(nullable: false, identity: true),
-                        Nome = c.String(),
-                        CriadoEm = c.DateTime(nullable: false),
-                    })
-                .PrimaryKey(t => t.ClienteId);
-            
             CreateTable(
                 "dbo.Pessoas",
                 c => new
@@ -33,13 +23,13 @@ namespace MyTeamTasksWpf.Migrations
                     {
                         ProjetoId = c.Int(nullable: false, identity: true),
                         Nome = c.String(),
-                        Status = c.Boolean(nullable: false),
+                        Status = c.String(),
                         CriadoEm = c.DateTime(nullable: false),
-                        Cliente_ClienteId = c.Int(),
+                        Cliente_PessoaId = c.Int(),
                     })
                 .PrimaryKey(t => t.ProjetoId)
-                .ForeignKey("dbo.Clientes", t => t.Cliente_ClienteId)
-                .Index(t => t.Cliente_ClienteId);
+                .ForeignKey("dbo.Clientes", t => t.Cliente_PessoaId)
+                .Index(t => t.Cliente_PessoaId);
             
             CreateTable(
                 "dbo.Tarefas",
@@ -54,22 +44,19 @@ namespace MyTeamTasksWpf.Migrations
                         Descricao = c.String(),
                         CriadoEm = c.DateTime(nullable: false),
                         Assinatura_UsuarioId = c.Int(),
-                        Cliente_ClienteId = c.Int(),
+                        Cliente_PessoaId = c.Int(),
                         Projeto_ProjetoId = c.Int(),
                         Requisitante_UsuarioId = c.Int(),
-                        Usuario_UsuarioId = c.Int(),
                     })
                 .PrimaryKey(t => t.TarefaId)
                 .ForeignKey("dbo.Usuarios", t => t.Assinatura_UsuarioId)
-                .ForeignKey("dbo.Clientes", t => t.Cliente_ClienteId)
+                .ForeignKey("dbo.Clientes", t => t.Cliente_PessoaId)
                 .ForeignKey("dbo.Projetos", t => t.Projeto_ProjetoId)
                 .ForeignKey("dbo.Usuarios", t => t.Requisitante_UsuarioId)
-                .ForeignKey("dbo.Usuarios", t => t.Usuario_UsuarioId)
                 .Index(t => t.Assinatura_UsuarioId)
-                .Index(t => t.Cliente_ClienteId)
+                .Index(t => t.Cliente_PessoaId)
                 .Index(t => t.Projeto_ProjetoId)
-                .Index(t => t.Requisitante_UsuarioId)
-                .Index(t => t.Usuario_UsuarioId);
+                .Index(t => t.Requisitante_UsuarioId);
             
             CreateTable(
                 "dbo.Usuarios",
@@ -77,33 +64,44 @@ namespace MyTeamTasksWpf.Migrations
                     {
                         UsuarioId = c.Int(nullable: false, identity: true),
                         Cargo = c.String(),
-                        Nickname = c.Int(nullable: false),
+                        Nickname = c.String(),
                         Senha = c.String(),
                         CriadoEm = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.UsuarioId);
             
+            CreateTable(
+                "dbo.Clientes",
+                c => new
+                    {
+                        PessoaId = c.Int(nullable: false),
+                        ClienteId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.PessoaId)
+                .ForeignKey("dbo.Pessoas", t => t.PessoaId)
+                .Index(t => t.PessoaId);
+            
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Tarefas", "Usuario_UsuarioId", "dbo.Usuarios");
+            DropForeignKey("dbo.Clientes", "PessoaId", "dbo.Pessoas");
             DropForeignKey("dbo.Tarefas", "Requisitante_UsuarioId", "dbo.Usuarios");
             DropForeignKey("dbo.Tarefas", "Projeto_ProjetoId", "dbo.Projetos");
-            DropForeignKey("dbo.Tarefas", "Cliente_ClienteId", "dbo.Clientes");
+            DropForeignKey("dbo.Tarefas", "Cliente_PessoaId", "dbo.Clientes");
             DropForeignKey("dbo.Tarefas", "Assinatura_UsuarioId", "dbo.Usuarios");
-            DropForeignKey("dbo.Projetos", "Cliente_ClienteId", "dbo.Clientes");
-            DropIndex("dbo.Tarefas", new[] { "Usuario_UsuarioId" });
+            DropForeignKey("dbo.Projetos", "Cliente_PessoaId", "dbo.Clientes");
+            DropIndex("dbo.Clientes", new[] { "PessoaId" });
             DropIndex("dbo.Tarefas", new[] { "Requisitante_UsuarioId" });
             DropIndex("dbo.Tarefas", new[] { "Projeto_ProjetoId" });
-            DropIndex("dbo.Tarefas", new[] { "Cliente_ClienteId" });
+            DropIndex("dbo.Tarefas", new[] { "Cliente_PessoaId" });
             DropIndex("dbo.Tarefas", new[] { "Assinatura_UsuarioId" });
-            DropIndex("dbo.Projetos", new[] { "Cliente_ClienteId" });
+            DropIndex("dbo.Projetos", new[] { "Cliente_PessoaId" });
+            DropTable("dbo.Clientes");
             DropTable("dbo.Usuarios");
             DropTable("dbo.Tarefas");
             DropTable("dbo.Projetos");
             DropTable("dbo.Pessoas");
-            DropTable("dbo.Clientes");
         }
     }
 }

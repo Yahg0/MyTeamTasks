@@ -80,12 +80,15 @@
     <Compile Include="DAL\SingletonContext.cs" />
     <Compile Include="DAL\TarefaDAO.cs" />
     <Compile Include="DAL\UsuarioDAO.cs" />
-    <Compile Include="Migrations\201909152331253_AdicionadoProjetoEmCliente.cs" />
-    <Compile Include="Migrations\201909152331253_AdicionadoProjetoEmCliente.Designer.cs">
-      <DependentUpon>201909152331253_AdicionadoProjetoEmCliente.cs</DependentUpon>
+    <Compile Include="Migrations\201909291933013_NomeDaMigracao2.cs" />
+    <Compile Include="Migrations\201909291933013_NomeDaMigracao2.designer.cs">
+      <DependentUpon>201909291933013_NomeDaMigracao2.cs</DependentUpon>
     </Compile>
     <Compile Include="View\vAdmin\AdminMenu.xaml.cs">
       <DependentUpon>AdminMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\vCliente\CriarCliente.xaml.cs">
+      <DependentUpon>CriarCliente.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\vDashboard\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
@@ -113,6 +116,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\vAdmin\AdminMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\vCliente\CriarCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -146,18 +153,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201909071925435_CriacaoDasModels.cs" />
-    <Compile Include="Migrations\201909071925435_CriacaoDasModels.Designer.cs">
-      <DependentUpon>201909071925435_CriacaoDasModels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909081658133_correcaoDoTipoNickNameDoUsuario.cs" />
-    <Compile Include="Migrations\201909081658133_correcaoDoTipoNickNameDoUsuario.Designer.cs">
-      <DependentUpon>201909081658133_correcaoDoTipoNickNameDoUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909081758378_removidoAtributoRepetidoDeUsuarioNaTarefa.cs" />
-    <Compile Include="Migrations\201909081758378_removidoAtributoRepetidoDeUsuarioNaTarefa.Designer.cs">
-      <DependentUpon>201909081758378_removidoAtributoRepetidoDeUsuarioNaTarefa.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Cliente.cs" />
     <Compile Include="Model\Context.cs" />
@@ -178,17 +173,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201909071925435_CriacaoDasModels.resx">
-      <DependentUpon>201909071925435_CriacaoDasModels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909081658133_correcaoDoTipoNickNameDoUsuario.resx">
-      <DependentUpon>201909081658133_correcaoDoTipoNickNameDoUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909081758378_removidoAtributoRepetidoDeUsuarioNaTarefa.resx">
-      <DependentUpon>201909081758378_removidoAtributoRepetidoDeUsuarioNaTarefa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909152331253_AdicionadoProjetoEmCliente.resx">
-      <DependentUpon>201909152331253_AdicionadoProjetoEmCliente.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201909291933013_NomeDaMigracao2.resx">
+      <DependentUpon>201909291933013_NomeDaMigracao2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -206,7 +192,6 @@
   <ItemGroup>
     <Folder Include="Img\" />
     <Folder Include="Util\" />
-    <Folder Include="View\vCliente\" />
     <Folder Include="View\vPessoa\" />
   </ItemGroup>
   <ItemGroup>
