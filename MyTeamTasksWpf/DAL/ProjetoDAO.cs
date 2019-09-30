@@ -11,9 +11,11 @@ namespace MyTeamTasksWpf.DAL
     class ProjetoDAO
     {
         private static Context ctx = SingletonContext.getInstance();
-
+        //Cadastro do projeto-
         public static void CadastrarProjeto(Projeto p) {
             ctx.Projetos.Add(p);
+
+
             ctx.SaveChanges();
         }
 

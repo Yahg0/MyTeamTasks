@@ -36,7 +36,8 @@ namespace MyTeamTasksWpf.View.vProjeto
                 !txtStatus.Text.Equals(""))
             {
                 c = new Cliente()
-                {
+                {    
+
                     Nome = cbClientes.SelectedValue.ToString()
                 };
                 p = new Projeto()            
