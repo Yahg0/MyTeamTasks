@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class NomeDaMigracao2 : DbMigration
+    public partial class Heranca : DbMigration
     {
         public override void Up()
         {
@@ -43,32 +43,20 @@
                         Resolucao = c.String(),
                         Descricao = c.String(),
                         CriadoEm = c.DateTime(nullable: false),
-                        Assinatura_UsuarioId = c.Int(),
+                        Assinatura_PessoaId = c.Int(),
                         Cliente_PessoaId = c.Int(),
                         Projeto_ProjetoId = c.Int(),
-                        Requisitante_UsuarioId = c.Int(),
+                        Requisitante_PessoaId = c.Int(),
                     })
                 .PrimaryKey(t => t.TarefaId)
-                .ForeignKey("dbo.Usuarios", t => t.Assinatura_UsuarioId)
+                .ForeignKey("dbo.Usuarios", t => t.Assinatura_PessoaId)
                 .ForeignKey("dbo.Clientes", t => t.Cliente_PessoaId)
                 .ForeignKey("dbo.Projetos", t => t.Projeto_ProjetoId)
-                .ForeignKey("dbo.Usuarios", t => t.Requisitante_UsuarioId)
-                .Index(t => t.Assinatura_UsuarioId)
+                .ForeignKey("dbo.Usuarios", t => t.Requisitante_PessoaId)
+                .Index(t => t.Assinatura_PessoaId)
                 .Index(t => t.Cliente_PessoaId)
                 .Index(t => t.Projeto_ProjetoId)
-                .Index(t => t.Requisitante_UsuarioId);
-            
-            CreateTable(
-                "dbo.Usuarios",
-                c => new
-                    {
-                        UsuarioId = c.Int(nullable: false, identity: true),
-                        Cargo = c.String(),
-                        Nickname = c.String(),
-                        Senha = c.String(),
-                        CriadoEm = c.DateTime(nullable: false),
-                    })
-                .PrimaryKey(t => t.UsuarioId);
+                .Index(t => t.Requisitante_PessoaId);
             
             CreateTable(
                 "dbo.Clientes",
@@ -81,24 +69,40 @@
                 .ForeignKey("dbo.Pessoas", t => t.PessoaId)
                 .Index(t => t.PessoaId);
             
+            CreateTable(
+                "dbo.Usuarios",
+                c => new
+                    {
+                        PessoaId = c.Int(nullable: false),
+                        UsuarioId = c.Int(nullable: false),
+                        Cargo = c.String(),
+                        Nickname = c.String(),
+                        Senha = c.String(),
+                    })
+                .PrimaryKey(t => t.PessoaId)
+                .ForeignKey("dbo.Pessoas", t => t.PessoaId)
+                .Index(t => t.PessoaId);
+            
         }
         
         public override void Down()
         {
+            DropForeignKey("dbo.Usuarios", "PessoaId", "dbo.Pessoas");
             DropForeignKey("dbo.Clientes", "PessoaId", "dbo.Pessoas");
-            DropForeignKey("dbo.Tarefas", "Requisitante_UsuarioId", "dbo.Usuarios");
+            DropForeignKey("dbo.Tarefas", "Requisitante_PessoaId", "dbo.Usuarios");
             DropForeignKey("dbo.Tarefas", "Projeto_ProjetoId", "dbo.Projetos");
             DropForeignKey("dbo.Tarefas", "Cliente_PessoaId", "dbo.Clientes");
-            DropForeignKey("dbo.Tarefas", "Assinatura_UsuarioId", "dbo.Usuarios");
+            DropForeignKey("dbo.Tarefas", "Assinatura_PessoaId", "dbo.Usuarios");
             DropForeignKey("dbo.Projetos", "Cliente_PessoaId", "dbo.Clientes");
+            DropIndex("dbo.Usuarios", new[] { "PessoaId" });
             DropIndex("dbo.Clientes", new[] { "PessoaId" });
-            DropIndex("dbo.Tarefas", new[] { "Requisitante_UsuarioId" });
+            DropIndex("dbo.Tarefas", new[] { "Requisitante_PessoaId" });
             DropIndex("dbo.Tarefas", new[] { "Projeto_ProjetoId" });
             DropIndex("dbo.Tarefas", new[] { "Cliente_PessoaId" });
-            DropIndex("dbo.Tarefas", new[] { "Assinatura_UsuarioId" });
+            DropIndex("dbo.Tarefas", new[] { "Assinatura_PessoaId" });
             DropIndex("dbo.Projetos", new[] { "Cliente_PessoaId" });
-            DropTable("dbo.Clientes");
             DropTable("dbo.Usuarios");
+            DropTable("dbo.Clientes");
             DropTable("dbo.Tarefas");
             DropTable("dbo.Projetos");
             DropTable("dbo.Pessoas");

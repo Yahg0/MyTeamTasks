@@ -16,10 +16,12 @@ namespace MyTeamTasksWpf.Model
             CriadoEm = DateTime.Now;
         }
 
+
         [Key]
         public int ClienteId { get; set; }
         public DateTime CriadoEm { get; set; }
         public List<Projeto> Projetos { get; set; }
+
 
         public override string ToString()
         {

@@ -28,9 +28,11 @@ namespace MyTeamTasksWpf.View.vCliente
             InitializeComponent();
         }
 
+
         private void BtnInserir_Click(object sender, RoutedEventArgs e)
         {
             //lbMensagem.Content = "";
+
 
             if (!txtNome.Text.Equals(""))
             {
@@ -54,6 +56,7 @@ namespace MyTeamTasksWpf.View.vCliente
 
         }
 
+
         private void BtnPesquisar_Click(object sender, RoutedEventArgs e)
         {
             if (!txtNome.Text.Equals(""))
@@ -63,6 +66,7 @@ namespace MyTeamTasksWpf.View.vCliente
                 {
                     txtId.Text = c.ClienteId.ToString();
                     txtNome.Text = c.Nome;
+
 
                 }
                 else
@@ -77,6 +81,8 @@ namespace MyTeamTasksWpf.View.vCliente
                 MensagemDeConfirmacaoOuErro("Preencha o nickname antes de pesquisar !");
             }
         }
+
+
 
         private void BtnExcluir_Click(object sender, RoutedEventArgs e)
         {

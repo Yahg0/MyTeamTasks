@@ -35,13 +35,17 @@ namespace MyTeamTasksWpf.View.vUsuario
 
             if (!txtCargo.Text.Equals("") &&
                 !txtNickName.Text.Equals("") &&
-                !txtSenha.Text.Equals(""))
+                !txtSenha.Text.Equals("") &&
+                !txtNome.Text.Equals("")
+              
+                )
             {
                 u = new Usuario()
                 {
                     Cargo = txtCargo.Text,
                     Nickname = txtNickName.Text,
-                    Senha = txtSenha.Text
+                    Senha = txtSenha.Text,
+                    Nome = txtNome.Text
                 };
 
                 UsuarioDAO.CadastrarUsuario(u);
@@ -70,6 +74,7 @@ namespace MyTeamTasksWpf.View.vUsuario
                     txtCargo.Text = u.Cargo;
                     txtNickName.Text = u.Nickname;
                     txtSenha.Text = u.Senha;
+                    txtNome.Text = u.Nome;
                 }
                 else
                 {
@@ -109,11 +114,13 @@ namespace MyTeamTasksWpf.View.vUsuario
         {            
             if (!txtCargo.Text.Equals("") &&
                 !txtNickName.Text.Equals("") &&
-                !txtSenha.Text.Equals(""))
+                !txtSenha.Text.Equals("") &&
+                !txtNome.Text.Equals(""))
             {
                 u.Cargo = txtCargo.Text;
                 u.Nickname = txtNickName.Text;
-                u.Senha = txtSenha.Text;               
+                u.Senha = txtSenha.Text;
+                u.Nome = txtNome.Text;
                 
                 if (UsuarioDAO.AlterarUsuario(u))
                 {
@@ -165,6 +172,7 @@ namespace MyTeamTasksWpf.View.vUsuario
             txtCargo.Clear();
             txtNickName.Clear();
             txtSenha.Clear();
+            txtNome.Clear();
         }
     }
 }
