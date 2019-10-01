@@ -28,7 +28,7 @@ namespace MyTeamTasksWpf.View.vTarefa
         {
             InitializeComponent();
         }
-
+        
  
         private void BtnProjeto_Click(object sender, RoutedEventArgs e)
         {
@@ -48,7 +48,7 @@ namespace MyTeamTasksWpf.View.vTarefa
 
         }
 
-        private void BtnDashboard_Click_1(object sender, RoutedEventArgs e)
+        private void BtnDashboard_Click(object sender, RoutedEventArgs e)
         {
             Dashboard dashboard = new Dashboard();
             dashboard.Show();
@@ -66,5 +66,6 @@ namespace MyTeamTasksWpf.View.vTarefa
         {
             dgTarefas.ItemsSource = TarefaDAO.ListarTarefas();
         }
+
     }
 }

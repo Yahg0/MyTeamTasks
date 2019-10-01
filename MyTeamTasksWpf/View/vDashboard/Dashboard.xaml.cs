@@ -2,8 +2,12 @@
 using MyTeamTasksWpf.View.vAdmin;
 using MyTeamTasksWpf.View.vProjeto;
 using System.Windows;
-using MyTeamTasksWpf.View.vLogin;
 using System.Windows.Media;
+using System;
+using MyTeamTasksWpf.DAL;
+using MyTeamTasksWpf.Model;
+using LiveCharts;
+
 
 namespace MyTeamTasksWpf.View.vDashboard
 {
@@ -16,7 +20,10 @@ namespace MyTeamTasksWpf.View.vDashboard
         {
             InitializeComponent();
         }
-        
+
+        Usuario u;
+
+        public SeriesCollection SeriesCollection { get; private set; }
 
         private void BtnProjeto_Click(object sender, RoutedEventArgs e)
         {
@@ -48,12 +55,18 @@ namespace MyTeamTasksWpf.View.vDashboard
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //Login login = new Login();
-            //lbUserLogado.Content = login.userLogado.ToString();
-            //lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
+            lbUserLogado.Content = "";
+            u = LoginDAO.GetUsuarioLogado();
+            lbUserLogado.Content = u.Nickname;
+            lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
+            u.Logado = false;
+
+            int users = UsuarioDAO.ListarUsuarios().Count;
+
+            Pizza.Value = users;
+
 
         }
-
 
     }
 }

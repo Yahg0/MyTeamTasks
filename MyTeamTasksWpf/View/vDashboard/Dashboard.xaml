@@ -4,8 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyTeamTasksWpf.View.vDashboard"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
         Title="Dashboard" Height="749.8" Width="1280" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="46*"/>
@@ -17,6 +19,7 @@
             <ColumnDefinition Width="1153*"/>
             <ColumnDefinition Width="60*"/>
         </Grid.ColumnDefinitions>
+
         <Rectangle Fill="#FF1D549E" HorizontalAlignment="Left" Height="48" Stroke="Black" VerticalAlignment="Top" Width="1274" Grid.ColumnSpan="3"/>
         <Button x:Name="btnDashboard" Content="Dashboard" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="94" Height="48" FontSize="10"/>
         <Button x:Name="btnProjeto" Content="Projeto" Grid.Column="1" HorizontalAlignment="Left" Margin="94,0,0,0" VerticalAlignment="Top" Width="94" Height="48" FontSize="10" Click="BtnProjeto_Click"/>
@@ -36,6 +39,10 @@
                 </Canvas>
             </Viewbox>
         </Button>
+
+        <lvc:Gauge x:Name="Pizza" Grid.Row="1" Grid.Column="1" Margin="35,51,791,350"
+                   Uses360Mode="True"
+                   From="0" To="100" Value="0" />
 
     </Grid>
 </Window>

@@ -27,7 +27,7 @@ namespace MyTeamTasksWpf.View.vTarefa
         Cliente c;
         Usuario assinatura;
         Usuario requisitante;
-        DateTime criadoEm;
+        DateTime criadoEm = DateTime.Now;
 
         public CriarTarefa()
         {

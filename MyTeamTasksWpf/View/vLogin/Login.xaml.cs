@@ -29,15 +29,13 @@ namespace MyTeamTasksWpf.View.vLogin
         {
             InitializeComponent();
         }
-
-        public string userLogado;
+        public string userLogado { get; set; }
 
         private void BtnEntrar_Click(object sender, RoutedEventArgs e)
         {
             if (!txtUser.Text.Equals("") && !txtSenha.Password.Equals(""))
             {
-                u = LoginDAO.AutenticarUsuario(txtUser.Text, txtSenha.Password);
-                userLogado = txtUser.Text;
+                u = LoginDAO.AutenticarUsuario(txtUser.Text, txtSenha.Password);                
 
                 if (u != null)
                 {
@@ -56,7 +54,6 @@ namespace MyTeamTasksWpf.View.vLogin
             {
                 
             }
-
             
         }
 
