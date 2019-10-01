@@ -9,28 +9,21 @@ using System.Threading.Tasks;
 namespace MyTeamTasksWpf.Model
 {
     [Table("Clientes")]
-    class Cliente:Pessoa
+    class Cliente : Pessoa
     {
-
         public Cliente()
         {
             CriadoEm = DateTime.Now;
         }
 
-
-        [Key]
-        public int ClienteId { get; set; }
-        public DateTime CriadoEm { get; set; }
+        //[Key]
+        //public int ClienteId { get; set; }
         public List<Projeto> Projetos { get; set; }
-
 
         public override string ToString()
         {
             return Nome;
-                
         }
     }
-
-    
     
 }

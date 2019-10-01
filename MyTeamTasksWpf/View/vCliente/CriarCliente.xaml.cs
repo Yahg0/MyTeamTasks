@@ -65,7 +65,7 @@ namespace MyTeamTasksWpf.View.vCliente
                 c = ClienteDAO.BuscarClientePorNome(txtNome.Text);
                 if (c != null)
                 {
-                    txtId.Text = c.ClienteId.ToString();
+                    txtId.Text = c.PessoaId.ToString();
                     txtNome.Text = c.Nome;
 
 
