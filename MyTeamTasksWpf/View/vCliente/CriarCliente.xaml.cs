@@ -57,6 +57,7 @@ namespace MyTeamTasksWpf.View.vCliente
         }
 
 
+
         private void BtnPesquisar_Click(object sender, RoutedEventArgs e)
         {
             if (!txtNome.Text.Equals(""))
@@ -84,6 +85,7 @@ namespace MyTeamTasksWpf.View.vCliente
 
 
 
+
         private void BtnExcluir_Click(object sender, RoutedEventArgs e)
         {
             if (MessageBox.Show("Tem certeza de que deseja remover este usuario ?",
@@ -104,6 +106,8 @@ namespace MyTeamTasksWpf.View.vCliente
                 }
             }
         }
+
+
 
         private void BtnEditar_Click(object sender, RoutedEventArgs e)
         {
@@ -128,6 +132,8 @@ namespace MyTeamTasksWpf.View.vCliente
                 MensagemDeConfirmacaoOuErro("Preencha os campos antes de editar !");
             }
         }
+
+
 
         private void BtnAtualizarGrid_Click(object sender, RoutedEventArgs e)
         {

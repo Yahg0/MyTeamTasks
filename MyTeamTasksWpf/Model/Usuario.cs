@@ -10,6 +10,7 @@ namespace MyTeamTasksWpf.Model
 {
     [Table("Usuarios")]
     class Usuario:Pessoa
+
     {
         public Usuario()
         {
@@ -17,10 +18,13 @@ namespace MyTeamTasksWpf.Model
         }
 
         [Key]
+
         public int UsuarioId { get; set; }
+
         public string Cargo { get; set; }
 
         public string Nickname { get; set; }
+
         public string Senha { get; set; }
 
 

@@ -11,6 +11,7 @@ namespace MyTeamTasksWpf.Model
     [Table("Clientes")]
     class Cliente:Pessoa
     {
+
         public Cliente()
         {
             CriadoEm = DateTime.Now;

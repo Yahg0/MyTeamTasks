@@ -13,25 +13,18 @@ namespace MyTeamTasksWpf.DAL
         private static Context ctx = SingletonContext.getInstance();  
 
 
-
-
-
         public static void CadastrarCliente(Cliente c) {
             ctx.Clientes.Add(c);
             ctx.SaveChanges();
         }
 
 
-
-
         public static List<Cliente> ListarClientes() => ctx.Clientes.ToList();
-
 
         public static Cliente BuscarClientePorNome(string nome)
         {
             return ctx.Clientes.FirstOrDefault(x => x.Nome.Equals(nome));
         }
-
 
         public static bool RemoverCliente(Cliente c)
         {
@@ -49,7 +42,6 @@ namespace MyTeamTasksWpf.DAL
 
         }
 
-
         public static bool AlterarCliente(Cliente c)
         {
             try
@@ -63,8 +55,6 @@ namespace MyTeamTasksWpf.DAL
                 return false;
             }
         }
-
-
     }
 }
 
