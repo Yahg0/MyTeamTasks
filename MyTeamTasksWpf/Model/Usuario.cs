@@ -26,5 +26,6 @@ namespace MyTeamTasksWpf.Model
         {
             return Nickname;
         }
+        //fim
     }
 }

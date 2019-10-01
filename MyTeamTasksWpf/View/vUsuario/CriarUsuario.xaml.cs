@@ -35,8 +35,7 @@ namespace MyTeamTasksWpf.View.vUsuario
 
             if (!txtCargo.Text.Equals("") &&
                 !txtNickName.Text.Equals("") &&
-                !txtSenha.Text.Equals("")               
-                )
+                !txtSenha.Text.Equals(""))
             {
                 u = new Usuario()
                 {

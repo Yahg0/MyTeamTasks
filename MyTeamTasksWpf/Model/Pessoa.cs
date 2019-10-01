@@ -24,5 +24,6 @@ namespace MyTeamTasksWpf.Model
             return "ID: " + PessoaId +
                 "\nNome: " + Nome;
         }
+
     }
 }

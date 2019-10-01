@@ -24,6 +24,7 @@ namespace MyTeamTasksWpf.Model
         {
             return Nome;
         }
+
     }
     
 }
