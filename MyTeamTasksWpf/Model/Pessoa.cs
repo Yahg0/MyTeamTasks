@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 
 namespace MyTeamTasksWpf.Model
 {
-    [Table("Pessoas")]
-    class Pessoa
+    public class Pessoa
     {
         public Pessoa()
         {
@@ -25,5 +24,6 @@ namespace MyTeamTasksWpf.Model
             return "ID: " + PessoaId +
                 "\nNome: " + Nome;
         }
+
     }
 }

@@ -15,17 +15,21 @@ namespace MyTeamTasksWpf.DAL
         public static void CadastrarUsuario(Usuario u) {
             ctx.Usuarios.Add(u);
             ctx.SaveChanges();
-        }        
+            Console.WriteLine(u);
+        }
+
 
         public static List<Usuario> ListarUsuarios() => ctx.Usuarios.ToList();
 
-        public static Usuario BuscarUsuarioPorNome(string nome)
-        {
+
+        public static Usuario BuscarUsuarioPorNome(string nome) {
             return ctx.Usuarios.FirstOrDefault(x => x.Nickname.Equals(nome));
         }
 
+
         public static bool RemoverUsuario(Usuario u)
-        {            
+        {
+
             try
             {              
                 ctx.Usuarios.Remove(u);
@@ -38,6 +42,7 @@ namespace MyTeamTasksWpf.DAL
             }
 
         }
+
 
         public static bool AlterarUsuario(Usuario u)
         {           

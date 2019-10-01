@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MyTeamTasksWpf.DAL;
+using MyTeamTasksWpf.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,42 +14,37 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using MyTeamTasksWpf.DAL;
-using MyTeamTasksWpf.Model;
 
-namespace MyTeamTasksWpf.View.vUsuario
+namespace MyTeamTasksWpf.View.vCliente
 {
     /// <summary>
-    /// Interaction logic for CriarUsuario.xaml
+    /// Lógica interna para CriarCliente.xaml
     /// </summary>
-    public partial class CriarUsuario : Window
+    public partial class CriarCliente : Window
     {
-        Usuario u;
-
-        public CriarUsuario()
+        Cliente c;
+        public CriarCliente()
         {
             InitializeComponent();
         }
 
+
         private void BtnInserir_Click(object sender, RoutedEventArgs e)
-        {            
+        {
             //lbMensagem.Content = "";
 
-            if (!txtCargo.Text.Equals("") &&
-                !txtNickName.Text.Equals("") &&
-                !txtSenha.Text.Equals(""))
+
+            if (!txtNome.Text.Equals(""))
             {
-                u = new Usuario()
+                c = new Cliente()
                 {
-                    Cargo = txtCargo.Text,
-                    Nickname = txtNickName.Text,
-                    Senha = txtSenha.Text
+                    Nome = txtNome.Text
                 };
 
-                UsuarioDAO.CadastrarUsuario(u);
+                ClienteDAO.CadastrarCliente(c);
 
                 lbMensagem.Foreground = new SolidColorBrush(Colors.DarkGreen);
-                MensagemDeConfirmacaoOuErro("Usuario inserido !");
+                MensagemDeConfirmacaoOuErro("Cliente inserido !");
                 LimparCampos();
 
             }
@@ -59,22 +56,24 @@ namespace MyTeamTasksWpf.View.vUsuario
 
         }
 
+
+
         private void BtnPesquisar_Click(object sender, RoutedEventArgs e)
         {
-            if (!txtNickName.Text.Equals(""))
+            if (!txtNome.Text.Equals(""))
             {
-                u = UsuarioDAO.BuscarUsuarioPorNome(txtNickName.Text);
-                if (u != null)
+                c = ClienteDAO.BuscarClientePorNome(txtNome.Text);
+                if (c != null)
                 {
-                    txtId.Text = u.PessoaId.ToString();
-                    txtCargo.Text = u.Cargo;
-                    txtNickName.Text = u.Nickname;
-                    txtSenha.Text = u.Senha;
+                    txtId.Text = c.PessoaId.ToString();
+                    txtNome.Text = c.Nome;
+
+
                 }
                 else
                 {
                     lbMensagem.Foreground = new SolidColorBrush(Colors.DarkRed);
-                    MensagemDeConfirmacaoOuErro("Usuario não encontrado !");
+                    MensagemDeConfirmacaoOuErro("Cliente não encontrado !");
                 }
             }
             else
@@ -84,6 +83,9 @@ namespace MyTeamTasksWpf.View.vUsuario
             }
         }
 
+
+
+
         private void BtnExcluir_Click(object sender, RoutedEventArgs e)
         {
             if (MessageBox.Show("Tem certeza de que deseja remover este usuario ?",
@@ -91,40 +93,37 @@ namespace MyTeamTasksWpf.View.vUsuario
                    MessageBoxButton.YesNo,
                    MessageBoxImage.Information) == MessageBoxResult.Yes)
             {
-                if (UsuarioDAO.RemoverUsuario(u))
+                if (ClienteDAO.RemoverCliente(c))
                 {
                     lbMensagem.Foreground = new SolidColorBrush(Colors.DarkGreen);
-                    MensagemDeConfirmacaoOuErro("Usuario removido !");
+                    MensagemDeConfirmacaoOuErro("Cliente removido !");
                     LimparCampos();
                 }
                 else
                 {
                     lbMensagem.Foreground = new SolidColorBrush(Colors.DarkRed);
-                    MensagemDeConfirmacaoOuErro("Não foi possivel remover o usuario selecionado, revise os campos !");
+                    MensagemDeConfirmacaoOuErro("Não foi possivel remover o cliente selecionado, revise os campos !");
                 }
             }
         }
-       
+
+
+
         private void BtnEditar_Click(object sender, RoutedEventArgs e)
-        {            
-            if (!txtCargo.Text.Equals("") &&
-                !txtNickName.Text.Equals("") &&
-                !txtSenha.Text.Equals(""))
+        {
+            if (!txtNome.Text.Equals(""))
             {
-                u.Cargo = txtCargo.Text;
-                u.Nickname = txtNickName.Text;
-                u.Senha = txtSenha.Text;
-                
-                if (UsuarioDAO.AlterarUsuario(u))
+                c.Nome = txtNome.Text;
+                if (ClienteDAO.AlterarCliente(c))
                 {
                     lbMensagem.Foreground = new SolidColorBrush(Colors.DarkGreen);
-                    MensagemDeConfirmacaoOuErro("Usuario alterado !");
+                    MensagemDeConfirmacaoOuErro("Cliente alterado !");
                     LimparCampos();
                 }
                 else
                 {
                     lbMensagem.Foreground = new SolidColorBrush(Colors.DarkRed);
-                    MensagemDeConfirmacaoOuErro("Erro! Usuario não alterado, revise os campos");
+                    MensagemDeConfirmacaoOuErro("Erro! CLiente não alterado, revise os campos");
                 }
             }
             else
@@ -133,15 +132,17 @@ namespace MyTeamTasksWpf.View.vUsuario
                 MensagemDeConfirmacaoOuErro("Preencha os campos antes de editar !");
             }
         }
-                        
+
+
+
         private void BtnAtualizarGrid_Click(object sender, RoutedEventArgs e)
         {
-            dglista.ItemsSource = UsuarioDAO.ListarUsuarios();
+            dglista.ItemsSource = ClienteDAO.ListarClientes();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            dglista.ItemsSource = UsuarioDAO.ListarUsuarios();
+            dglista.ItemsSource = ClienteDAO.ListarClientes();
         }
 
         private void MensagemDeConfirmacaoOuErro(String message, int Interval = 3000)
@@ -162,9 +163,7 @@ namespace MyTeamTasksWpf.View.vUsuario
         public void LimparCampos()
         {
             txtId.Clear();
-            txtCargo.Clear();
-            txtNickName.Clear();
-            txtSenha.Clear();
+            txtNome.Clear();
         }
     }
 }

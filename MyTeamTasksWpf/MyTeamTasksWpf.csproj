@@ -44,12 +44,6 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
-      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
-    </Reference>
-    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
-      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
-    </Reference>
     <Reference Include="MaterialDesignColors, Version=1.2.0.325, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.1.2.0\lib\net45\MaterialDesignColors.dll</HintPath>
     </Reference>
@@ -86,16 +80,15 @@
     <Compile Include="DAL\SingletonContext.cs" />
     <Compile Include="DAL\TarefaDAO.cs" />
     <Compile Include="DAL\UsuarioDAO.cs" />
-    <Compile Include="Migrations\201909302343376_criacaodabase.cs" />
-    <Compile Include="Migrations\201909302343376_criacaodabase.designer.cs">
-      <DependentUpon>201909302343376_criacaodabase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910010135479_addPropLogadoNoUser.cs" />
-    <Compile Include="Migrations\201910010135479_addPropLogadoNoUser.designer.cs">
-      <DependentUpon>201910010135479_addPropLogadoNoUser.cs</DependentUpon>
+    <Compile Include="Migrations\201910012230449_criacaoDaBase.cs" />
+    <Compile Include="Migrations\201910012230449_criacaoDaBase.designer.cs">
+      <DependentUpon>201910012230449_criacaoDaBase.cs</DependentUpon>
     </Compile>
     <Compile Include="View\vAdmin\AdminMenu.xaml.cs">
       <DependentUpon>AdminMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\vCliente\CriarCliente.xaml.cs">
+      <DependentUpon>CriarCliente.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\vDashboard\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
@@ -123,6 +116,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\vAdmin\AdminMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\vCliente\CriarCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -176,11 +173,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201909302343376_criacaodabase.resx">
-      <DependentUpon>201909302343376_criacaodabase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910010135479_addPropLogadoNoUser.resx">
-      <DependentUpon>201910010135479_addPropLogadoNoUser.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201910012230449_criacaoDaBase.resx">
+      <DependentUpon>201910012230449_criacaoDaBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -193,14 +187,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Img\" />
     <Folder Include="Util\" />
-    <Folder Include="View\vCliente\" />
     <Folder Include="View\vPessoa\" />
   </ItemGroup>
   <ItemGroup>

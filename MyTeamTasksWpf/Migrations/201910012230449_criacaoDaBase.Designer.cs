@@ -7,13 +7,13 @@ namespace MyTeamTasksWpf.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.3.0")]
-    public sealed partial class criacaodabase : IMigrationMetadata
+    public sealed partial class criacaoDaBase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(criacaodabase));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(criacaoDaBase));
         
         string IMigrationMetadata.Id
         {
-            get { return "201909302343376_criacaodabase"; }
+            get { return "201910012230449_criacaoDaBase"; }
         }
         
         string IMigrationMetadata.Source
