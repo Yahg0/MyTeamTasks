@@ -48,7 +48,7 @@ namespace MyTeamTasksWpf.DAL
         {           
             try
             {
-                ctx.Entry(u).State = EntityState.Modified;
+                ctx.Entry(u).State = EntityState.Modified;                
                 ctx.SaveChanges();
                 return true;
             }

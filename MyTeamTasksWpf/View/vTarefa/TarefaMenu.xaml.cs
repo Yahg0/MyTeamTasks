@@ -24,9 +24,17 @@ namespace MyTeamTasksWpf.View.vTarefa
     /// </summary>
     public partial class TarefaMenu : Window
     {
+        private string nickname;
         public TarefaMenu()
         {
             InitializeComponent();
+        }
+
+        public TarefaMenu(string nickname)
+        {
+            InitializeComponent();
+            this.nickname = nickname;
+            lbUserLogado.Content = nickname;
         }
         
  

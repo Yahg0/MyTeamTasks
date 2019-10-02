@@ -39,7 +39,7 @@
         <ComboBox x:Name="cbAssinatura" HorizontalAlignment="Left" Margin="675,294,0,0" VerticalAlignment="Top" Width="120" Opacity="0.6"/>
         <ComboBox x:Name="cbRequisitante" HorizontalAlignment="Left" Margin="682,334,0,0" VerticalAlignment="Top" Width="120" Opacity="0.6"/>
         <ComboBox x:Name="cbCliente" HorizontalAlignment="Left" Margin="880,294,0,0" VerticalAlignment="Top" Width="120" Opacity="0.59"/>
-        <Label x:Name="lbMensagem" Content="" HorizontalAlignment="Left" Margin="308,250,0,0" VerticalAlignment="Top" Width="209"/>
+        <Label x:Name="lbMensagem" Content="" HorizontalAlignment="Left" Margin="151,250,0,0" VerticalAlignment="Top" Width="366"/>
         <Label x:Name="lbCampoObrigatorio" Content="*" HorizontalAlignment="Left" Margin="326,136,0,0" VerticalAlignment="Top" FontSize="18" Foreground="#FFC13131" Height="30"/>
         <Label x:Name="lbCampoObrigatorio_Copy" Content="*" HorizontalAlignment="Left" Margin="270,289,0,0" VerticalAlignment="Top" FontSize="18" Foreground="#FFC13131" Height="22"/>
         <Label x:Name="lbCampoObrigatorio_Copy1" Content="*" HorizontalAlignment="Left" Margin="807,328,0,0" VerticalAlignment="Top" FontSize="18" Foreground="#FFC13131" Height="28"/>

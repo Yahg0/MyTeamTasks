@@ -3,6 +3,7 @@ using MyTeamTasksWpf.View.vDashboard;
 using MyTeamTasksWpf.View.vProjeto;
 using MyTeamTasksWpf.View.vUsuario;
 using System.Windows;
+using MyTeamTasksWpf.View.vCliente;
 
 namespace MyTeamTasksWpf.View.vAdmin
 {
@@ -45,7 +46,8 @@ namespace MyTeamTasksWpf.View.vAdmin
 
         private void BtnClientes_Click(object sender, RoutedEventArgs e)
         {
-
+            CriarCliente criarCliente = new CriarCliente();
+            criarCliente.Show();            
         }
 
         private void BtnUsuarios_Click(object sender, RoutedEventArgs e)

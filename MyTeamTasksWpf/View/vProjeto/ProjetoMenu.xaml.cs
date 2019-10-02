@@ -2,6 +2,7 @@
 using MyTeamTasksWpf.View.vAdmin;
 using MyTeamTasksWpf.View.vDashboard;
 using System.Windows;
+using MyTeamTasksWpf.DAL;
 
 namespace MyTeamTasksWpf.View.vProjeto
 {
@@ -10,9 +11,17 @@ namespace MyTeamTasksWpf.View.vProjeto
     /// </summary>
     public partial class ProjetoMenu : Window
     {
+        private string nickname;
         public ProjetoMenu()
         {
             InitializeComponent();
+        }
+
+        public ProjetoMenu(string nickname)
+        {
+            InitializeComponent();            
+            this.nickname = nickname;
+            lbUserLogado.Content = nickname;
         }
 
         private void BtnTarefas_Click(object sender, RoutedEventArgs e)
@@ -45,6 +54,11 @@ namespace MyTeamTasksWpf.View.vProjeto
             AdminMenu adminMenu = new AdminMenu();
             adminMenu.Show();
             this.Close();
+        }
+
+        private void DgProjetos_Loaded(object sender, RoutedEventArgs e)
+        {
+            dgProjetos.ItemsSource = ProjetoDAO.ListarProjetos();
         }
     }
 }

@@ -39,7 +39,7 @@ namespace MyTeamTasksWpf.View.vLogin
 
                 if (u != null)
                 {
-                    Dashboard dashboard = new Dashboard();
+                    Dashboard dashboard = new Dashboard(u);
                     dashboard.Show();
                     this.Close();
                 }

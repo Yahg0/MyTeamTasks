@@ -46,6 +46,7 @@ namespace MyTeamTasksWpf.View.vProjeto
                     Status = txtStatus.Text,
                     
                 };
+                c = ClienteDAO.BuscarClientePorNome(c.Nome);
                 p.Cliente = c;//Atribui cliente ao projeto
 
                 ProjetoDAO.CadastrarProjeto(p);

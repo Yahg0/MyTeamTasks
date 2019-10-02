@@ -25,12 +25,13 @@ namespace MyTeamTasksWpf.DAL
             return u;
         }
 
-        public static Usuario AlteraStatusLogin(Usuario u) {
-            
-                ctx.Entry(u).State = EntityState.Modified;
-                u.Logado = true;
-                ctx.SaveChanges();
-                return u;        
+        public static Usuario AlteraStatusLogin(Usuario u)
+        {
+
+            ctx.Entry(u).State = EntityState.Modified;
+            u.Logado = true;
+            ctx.SaveChanges();
+            return u;
 
         }
 

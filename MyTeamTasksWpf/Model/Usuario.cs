@@ -9,11 +9,12 @@ using System.Threading.Tasks;
 namespace MyTeamTasksWpf.Model
 {
     [Table("Usuarios")]
-    class Usuario : Pessoa
+    public class Usuario : Pessoa
     {
         public Usuario()
         {
             CriadoEm = DateTime.Now;
+            Logado = false;
         }
 
         // [Key]
@@ -21,6 +22,9 @@ namespace MyTeamTasksWpf.Model
         public string Cargo { get; set; }
         public string Nickname { get; set; }
         public string Senha { get; set; }
+        public bool Logado { get; set; }
+
+
 
         public override string ToString()
         {

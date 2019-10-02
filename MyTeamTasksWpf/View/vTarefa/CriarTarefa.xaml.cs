@@ -46,9 +46,13 @@ namespace MyTeamTasksWpf.View.vTarefa
 
         private void BtnInserir_Click(object sender, RoutedEventArgs e)
         {
+      
             if (!txtNomeTarefa.Text.Equals("")&&
-                !txtTipo.Text.Equals(""))
+                !txtTipo.Text.Equals("") &&
+                !cbRequisitante.SelectedValue.Equals("")
+                )
             {
+            
                 t = new Tarefa()
                 {
                     Titulo = txtNomeTarefa.Text,
@@ -70,8 +74,12 @@ namespace MyTeamTasksWpf.View.vTarefa
                 requisitante = new Usuario() {
                     Nickname = cbRequisitante.SelectedValue.ToString(),
                 };
+                p = ProjetoDAO.BuscarProjetoPorNome(p.Nome);
                 t.Projeto = p;
+                c = ClienteDAO.BuscarClientePorNome(c.Nome);
                 t.Cliente = c;
+                assinatura = UsuarioDAO.BuscarUsuarioPorNome(assinatura.Nome);
+                requisitante = UsuarioDAO.BuscarUsuarioPorNome(requisitante.Nome);
                 t.Assinatura = assinatura;
                 t.Requisitante = requisitante;
                 t.CriadoEm = DateTime.Now;
@@ -82,6 +90,7 @@ namespace MyTeamTasksWpf.View.vTarefa
                 lbMensagem.Foreground = new SolidColorBrush(Colors.DarkGreen);
                 MensagemDeConfirmacaoOuErro("Tarefa criada !");
                 LimparCampos();
+
             }
             else
             {
@@ -113,9 +122,9 @@ namespace MyTeamTasksWpf.View.vTarefa
             txtResolucao.Clear();
             txtDesc.Clear();
 
-            CriarTarefa tela = new CriarTarefa();
-            tela.Show();
-            this.Close();
+            //CriarTarefa tela = new CriarTarefa();
+            //tela.Show();
+            //this.Close();
             
         }
     }
