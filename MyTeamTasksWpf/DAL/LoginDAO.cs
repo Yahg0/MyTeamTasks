@@ -19,7 +19,6 @@ namespace MyTeamTasksWpf.DAL
             u = ctx.Usuarios.FirstOrDefault(x => x.Senha.Equals(senha));
 
             ctx.SaveChanges();
-
             return u;
         }
 

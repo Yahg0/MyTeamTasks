@@ -25,6 +25,11 @@ namespace MyTeamTasksWpf.DAL
             return ctx.Tarefas.Where(x => x.Status == t.Status).ToList();
         }
 
+        public static List<Tarefa> BuscarTarefaPorAssinatura(Usuario u)
+        {
+            return ctx.Tarefas.Where(s => s.Assinatura.Nickname == u.Nickname).ToList();
+        }
+
         public static bool RemoverTarefa(Tarefa t) {
             try
             {

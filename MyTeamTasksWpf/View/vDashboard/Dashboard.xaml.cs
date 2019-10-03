@@ -57,6 +57,7 @@ namespace MyTeamTasksWpf.View.vDashboard
         {
             lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
             lbUserLogado.Content = ValidaLogin.user;
+            btnConfigurações.IsEnabled = ValidaLogin.adminLogado;
 
             int users = UsuarioDAO.ListarUsuarios().Count;
 

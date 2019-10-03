@@ -69,6 +69,7 @@ namespace MyTeamTasksWpf.View.vAdmin
         {
             lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
             lbUserLogado.Content = ValidaLogin.user;
+            btnConfigurações.IsEnabled = ValidaLogin.adminLogado;
         }
     }
 }

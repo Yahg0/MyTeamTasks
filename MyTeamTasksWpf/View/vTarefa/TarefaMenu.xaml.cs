@@ -17,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MyTeamTasksWpf.Util;
+using MyTeamTasksWpf.Model;
 
 namespace MyTeamTasksWpf.View.vTarefa
 {
@@ -26,6 +27,7 @@ namespace MyTeamTasksWpf.View.vTarefa
     public partial class TarefaMenu : Window
     {
         private string nickname;
+        Usuario u;
         public TarefaMenu()
         {
             InitializeComponent();
@@ -76,7 +78,19 @@ namespace MyTeamTasksWpf.View.vTarefa
             dgTarefas.ItemsSource = TarefaDAO.ListarTarefas();
             lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
             lbUserLogado.Content = ValidaLogin.user;
+            btnConfigurações.IsEnabled = ValidaLogin.adminLogado;
         }
 
+        private void LbTodasTarefas_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            dgTarefas.ItemsSource = TarefaDAO.ListarTarefas();
+        }
+
+        private void Label_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            u = UsuarioDAO.BuscarUsuarioPorNome(ValidaLogin.user);
+            u.Nickname = ValidaLogin.user;
+            dgTarefas.ItemsSource = TarefaDAO.BuscarTarefaPorAssinatura(u);
+        }
     }
 }

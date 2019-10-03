@@ -43,10 +43,22 @@ namespace MyTeamTasksWpf.View.vLogin
                 ProjetoMenu pm = new ProjetoMenu();
                 TarefaMenu tm = new TarefaMenu();
                 AdminMenu am = new AdminMenu();
+                CriarTarefa ct = new CriarTarefa();
 
 
                 u = LoginDAO.AutenticarUsuario(txtUser.Text, txtSenha.Password);
+                u.Nickname = txtUser.Text;
 
+                if (u != null)
+                {
+                    u = UsuarioDAO.BuscarUsuarioPorNome(txtUser.Text);
+                    if (u.Cargo.Equals("Gerente de projetos") || u.Cargo.Equals("Administrador"))
+                    {
+                        ValidaLogin.GerenteLogado = true;
+                    }
+                }
+
+                #region Validações de acesso                
                 //Valida se admin logado, se sim, habilita botão de configuração do sistema
                 if (!txtUser.Text.Equals("admin"))
                 {                    
@@ -58,6 +70,7 @@ namespace MyTeamTasksWpf.View.vLogin
 
                     //Atribui o valor do txtUser em uma variavel estatica
                     ValidaLogin.user = txtUser.Text;
+                    ValidaLogin.adminLogado = false;
 
                     //Insere nome do user logado na label branca do menu superior
                     dashboard.lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
@@ -75,7 +88,14 @@ namespace MyTeamTasksWpf.View.vLogin
                 }
                 else
                 {
+                    //Habilita botão de config quando é adm
+                    dashboard.btnConfigurações.IsEnabled = true;
+                    pm.btnConfigurações.IsEnabled = true;
+                    tm.btnConfigurações.IsEnabled = true;
+                    am.btnConfigurações.IsEnabled = true;
+
                     ValidaLogin.user = txtUser.Text;
+                    ValidaLogin.adminLogado = true;
 
                     dashboard.btnConfigurações.IsEnabled = true;
 
@@ -92,6 +112,8 @@ namespace MyTeamTasksWpf.View.vLogin
                     am.lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
                     am.lbUserLogado.Content = ValidaLogin.user;
                 }
+               
+                #endregion
 
                 if (u != null)
                 {
@@ -108,7 +130,8 @@ namespace MyTeamTasksWpf.View.vLogin
             }
             else
             {
-                
+                lbMensagem.Foreground = new SolidColorBrush(Colors.DarkRed);
+                MensagemDeConfirmacaoOuErro("Preencha o LOGIN e SENHA para entrar !");
             }
             
         }

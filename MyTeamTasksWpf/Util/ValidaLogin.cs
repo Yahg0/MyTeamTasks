@@ -12,6 +12,10 @@ namespace MyTeamTasksWpf.Util
     class ValidaLogin
     {
         public static string user { get; set; }
+        public static string cargo { get; set; }
+        public static bool adminLogado { get; set; }
+
+        public static bool GerenteLogado { get; set; }
         //private ValidaLogin()
         //{
         //    Usuario = new Usuario();

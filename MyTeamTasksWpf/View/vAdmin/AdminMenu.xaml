@@ -39,30 +39,30 @@
         <Label Content="Painel administrativo" Grid.Column="1" HorizontalAlignment="Left" Margin="66,53,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="24"/>
 
         <!-- Cliente-->
-        <Button x:Name="btnClientes" Grid.Column="1" HorizontalAlignment="Left" Margin="66,144,0,0" Grid.Row="1" VerticalAlignment="Top" Width="475" Height="200" Background="#FFC34D4D" BorderBrush="{x:Null}" Click="BtnClientes_Click">
+        <Button x:Name="btnClientes" Grid.Column="1" HorizontalAlignment="Left" Margin="66,108,0,0" Grid.Row="1" VerticalAlignment="Top" Width="475" Height="200" Background="#FFC34D4D" BorderBrush="{x:Null}" Click="BtnClientes_Click">
             <Label Content="Clientes" Foreground="White" FontSize="22" Height="148" Width="243"/>
         </Button>
-        <Viewbox Width="48" Height="48" Margin="0,0,990,492" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="1">
+        <Viewbox Width="48" Height="48" Margin="0,0,990,528" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="1">
             <Canvas Width="24" Height="24">
                 <Path Data="M22,3H2C0.91,3.04 0.04,3.91 0,5V19C0.04,20.09 0.91,20.96 2,21H22C23.09,20.96 23.96,20.09 24,19V5C23.96,3.91 23.09,3.04 22,3M22,19H2V5H22V19M14,17V15.75C14,14.09 10.66,13.25 9,13.25C7.34,13.25 4,14.09 4,15.75V17H14M9,7A2.5,2.5 0 0,0 6.5,9.5A2.5,2.5 0 0,0 9,12A2.5,2.5 0 0,0 11.5,9.5A2.5,2.5 0 0,0 9,7M14,7V8H20V7H14M14,9V10H20V9H14M14,11V12H18V11H14" Fill="White" Height="29.834" Stretch="Fill" Width="37" Canvas.Left="-13" Canvas.Top="41.512" />
             </Canvas>
         </Viewbox>
 
         <!-- Usuarios -->
-        <Button x:Name="btnUsuarios" Grid.Column="1" HorizontalAlignment="Left" Margin="614,144,0,0" Grid.Row="1" VerticalAlignment="Top" Width="475" Height="200" Background="#FF2D9CDB" BorderBrush="{x:Null}" Click="BtnUsuarios_Click">
+        <Button x:Name="btnUsuarios" Grid.Column="1" HorizontalAlignment="Left" Margin="614,108,0,0" Grid.Row="1" VerticalAlignment="Top" Width="475" Height="200" Background="#FF2D9CDB" BorderBrush="{x:Null}" Click="BtnUsuarios_Click">
             <Label Content="Usuarios" Foreground="White" FontSize="22" Height="148" Width="258"/>
         </Button>
-        <Viewbox Width="48" Height="48" Margin="0,0,990,492" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="1">
+        <Viewbox Width="48" Height="48" Margin="0,0,990,528" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="1">
             <Canvas Width="24" Height="24">
                 <Path Data="M15,14C12.33,14 7,15.33 7,18V20H23V18C23,15.33 17.67,14 15,14M6,10V7H4V10H1V12H4V15H6V12H9V10M15,12A4,4 0 0,0 19,8A4,4 0 0,0 15,4A4,4 0 0,0 11,8A4,4 0 0,0 15,12Z" Fill="White" Height="26.834" Stretch="Fill" Width="34" Canvas.Left="264" Canvas.Top="38.654" />
 
             </Canvas>
         </Viewbox>
         <!-- Projetos -->
-        <Button x:Name="btnProjetos" Grid.Column="1" HorizontalAlignment="Left" Margin="66,402,0,0" Grid.Row="1" VerticalAlignment="Top" Width="475" Height="200" Background="#FF5FBC86" BorderBrush="{x:Null}" Click="BtnProjetos_Click">
+        <Button x:Name="btnProjetos" Grid.Column="1" HorizontalAlignment="Left" Margin="66,366,0,0" Grid.Row="1" VerticalAlignment="Top" Width="475" Height="200" Background="#FF5FBC86" BorderBrush="{x:Null}" Click="BtnProjetos_Click">
             <Label Content="Projetos" Foreground="White" FontSize="22" Height="148" Width="256"/>
         </Button>
-        <Viewbox Width="48" Height="48" Margin="0,0,990,492" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="1">
+        <Viewbox Width="48" Height="48" Margin="0,0,990,528" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="1">
             <Canvas Width="24" Height="24">
                 <Path Data="M17,14H19V17H22V19H19V22H17V19H14V17H17V14M5,3H19C20.11,3 21,3.89 21,5V12.8C20.39,12.45 19.72,12.2 19,12.08V5H5V19H12.08C12.2,19.72 12.45,20.39 12.8,21H5C3.89,21 3,20.11 3,19V5C3,3.89 3.89,3 5,3M7,7H17V9H7V7M7,11H17V12.08C16.15,12.22 15.37,12.54 14.68,13H7V11M7,15H12V17H7V15Z" Fill="White" Height="34.501" Stretch="Fill" Width="34" Canvas.Left="-12" Canvas.Top="171.678" />
             </Canvas>
@@ -71,6 +71,6 @@
         <Separator HorizontalAlignment="Center" Height="26" Margin="0,604,0,0" Grid.Row="1" VerticalAlignment="Top" Width="1274" Background="#FFC7C7C7" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
         <Label Content="© MyTeamTasks" Grid.Column="1" HorizontalContentAlignment="Center" Margin="0,5,0,22" Grid.Row="2"  FontFamily="Graphik Regular" FontSize="16" Foreground="#FFC7C7C7" Width="1154"/>
         <Label Content="Curitiba - 2019" Grid.Column="1" HorizontalContentAlignment="Center" Margin="0,29,0,-2" Grid.Row="2"  FontFamily="Graphik Regular" Foreground="#FFC7C7C7" Width="1154"/>
-       
+
     </Grid>
 </Window>

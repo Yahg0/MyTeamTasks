@@ -26,6 +26,11 @@ namespace MyTeamTasksWpf.DAL
             return ctx.Usuarios.FirstOrDefault(x => x.Nickname.Equals(nome));
         }
 
+        //public static Usuario BuscarUsuarioPorCargo(string nome,string cargo)
+        //{           
+        //    return ctx.Usuarios.FirstOrDefault(x => x.Cargo.Equals(cargo) && x.Nickname.Equals(nome));
+        //}
+
 
         public static bool RemoverUsuario(Usuario u)
         {

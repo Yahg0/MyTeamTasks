@@ -1,5 +1,6 @@
 ﻿using MyTeamTasksWpf.DAL;
 using MyTeamTasksWpf.Model;
+using MyTeamTasksWpf.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +43,9 @@ namespace MyTeamTasksWpf.View.vTarefa
             cbRequisitante.ItemsSource = UsuarioDAO.ListarUsuarios();
 
             dtCriadoEm.Text = DateTime.Now.ToString();
+
+            cbAssinatura.IsEnabled = ValidaLogin.GerenteLogado;
+
         }
 
         private void BtnInserir_Click(object sender, RoutedEventArgs e)
@@ -64,7 +68,7 @@ namespace MyTeamTasksWpf.View.vTarefa
                 };
                 p = new Projeto() {
                     Nome = cbProjetos.SelectedValue.ToString(),
-                };
+                };//Validar aqui, cliente vazio estoura exceção
                 c = new Cliente() {
                     Nome = cbCliente.SelectedValue.ToString(),
                 };
@@ -76,12 +80,16 @@ namespace MyTeamTasksWpf.View.vTarefa
                 };
                 p = ProjetoDAO.BuscarProjetoPorNome(p.Nome);
                 t.Projeto = p;
+
                 c = ClienteDAO.BuscarClientePorNome(c.Nome);
                 t.Cliente = c;
+
                 assinatura = UsuarioDAO.BuscarUsuarioPorNome(assinatura.Nome);
-                requisitante = UsuarioDAO.BuscarUsuarioPorNome(requisitante.Nome);
                 t.Assinatura = assinatura;
+
+                requisitante = UsuarioDAO.BuscarUsuarioPorNome(requisitante.Nome);
                 t.Requisitante = requisitante;
+
                 t.CriadoEm = DateTime.Now;
                 
 
