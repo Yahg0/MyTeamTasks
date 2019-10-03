@@ -1,6 +1,10 @@
 ﻿using MyTeamTasksWpf.DAL;
 using MyTeamTasksWpf.Model;
+using MyTeamTasksWpf.Util;
+using MyTeamTasksWpf.View.vAdmin;
 using MyTeamTasksWpf.View.vDashboard;
+using MyTeamTasksWpf.View.vProjeto;
+using MyTeamTasksWpf.View.vTarefa;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +28,7 @@ namespace MyTeamTasksWpf.View.vLogin
     public partial class Login : Window
     {
         Usuario u;
-
+        
         public Login()
         {
             InitializeComponent();
@@ -35,11 +39,48 @@ namespace MyTeamTasksWpf.View.vLogin
         {
             if (!txtUser.Text.Equals("") && !txtSenha.Password.Equals(""))
             {
-                u = LoginDAO.AutenticarUsuario(txtUser.Text, txtSenha.Password);                
+                Dashboard dashboard = new Dashboard();
+                ProjetoMenu pm = new ProjetoMenu();
+                TarefaMenu tm = new TarefaMenu();
+                AdminMenu am = new AdminMenu();
+
+
+                u = LoginDAO.AutenticarUsuario(txtUser.Text, txtSenha.Password);
+
+                //Valida se admin logado, se sim, habilita botão de configuração do sistema
+                if (!txtUser.Text.Equals("admin"))
+                {                    
+                    //Desabilita botão de config quando não é adm
+                    dashboard.btnConfigurações.IsEnabled = false;
+                    pm.btnConfigurações.IsEnabled = false;
+                    tm.btnConfigurações.IsEnabled = false;
+                    am.btnConfigurações.IsEnabled = false;
+
+                    //Atribui o valor do txtUser em uma variavel estatica
+                    ValidaLogin.user = txtUser.Text;
+
+                    //Insere nome do user logado na label branca do menu superior
+                    dashboard.lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
+                    dashboard.lbUserLogado.Content = ValidaLogin.user;
+
+                    pm.lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
+                    pm.lbUserLogado.Content = ValidaLogin.user;
+
+                    tm.lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
+                    tm.lbUserLogado.Content = ValidaLogin.user;
+
+
+                    am.lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
+                    am.lbUserLogado.Content = ValidaLogin.user;
+                }
+                else
+                {
+                    dashboard.btnConfigurações.IsEnabled = true;
+                }
 
                 if (u != null)
                 {
-                    Dashboard dashboard = new Dashboard(u);
+                
                     dashboard.Show();
                     this.Close();
                 }

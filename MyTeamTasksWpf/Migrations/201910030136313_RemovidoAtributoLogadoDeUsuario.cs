@@ -3,16 +3,16 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddBoolNoUsuario : DbMigration
+    public partial class RemovidoAtributoLogadoDeUsuario : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.Usuarios", "Logado", c => c.Boolean(nullable: false));
+            DropColumn("dbo.Usuarios", "Logado");
         }
         
         public override void Down()
         {
-            DropColumn("dbo.Usuarios", "Logado");
+            AddColumn("dbo.Usuarios", "Logado", c => c.String());
         }
     }
 }

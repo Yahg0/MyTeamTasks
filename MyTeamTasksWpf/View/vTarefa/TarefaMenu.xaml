@@ -24,7 +24,7 @@
         <Button x:Name="btnTarefas" Content="Tarefas" Grid.Column="1" HorizontalAlignment="Left" Margin="188,0,0,0" VerticalAlignment="Top" Width="94" Height="42" FontSize="10" Click="BtnTarefas_Click"/>
         <Button x:Name="btnCriar" Content="Criar" Grid.Column="1" HorizontalAlignment="Left" Margin="282,0,0,0" VerticalAlignment="Top" Width="94" Height="42" FontSize="10" Click="BtnCriar_Click"/>
         <!--Icone user, nome user e config-->
-        <Label x:Name="lbUserLogado" Content="Label" HorizontalContentAlignment="Right" Grid.Column="1" HorizontalAlignment="Right" Margin="0,15,99,0" VerticalAlignment="Top" Foreground="White" FontSize="16" Width="166"/>
+        <Label x:Name="lbUserLogado" HorizontalContentAlignment="Right" Grid.Column="1" HorizontalAlignment="Right" Margin="0,15,99,0" VerticalAlignment="Top" Foreground="White" FontSize="14" Width="166" Height="25"/>
         <Viewbox Width="38" Height="38" Grid.Column="1">
             <Canvas Width="24" Height="24">
                 <Path Data="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" Fill="White" Canvas.Left="313" Canvas.Top="1" />

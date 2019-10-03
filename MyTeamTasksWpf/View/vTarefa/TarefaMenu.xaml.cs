@@ -16,6 +16,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MyTeamTasksWpf.Util;
 
 namespace MyTeamTasksWpf.View.vTarefa
 {
@@ -73,6 +74,8 @@ namespace MyTeamTasksWpf.View.vTarefa
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             dgTarefas.ItemsSource = TarefaDAO.ListarTarefas();
+            lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
+            lbUserLogado.Content = ValidaLogin.user;
         }
 
     }

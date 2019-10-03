@@ -3,6 +3,8 @@ using MyTeamTasksWpf.View.vAdmin;
 using MyTeamTasksWpf.View.vDashboard;
 using System.Windows;
 using MyTeamTasksWpf.DAL;
+using System.Windows.Media;
+using MyTeamTasksWpf.Util;
 
 namespace MyTeamTasksWpf.View.vProjeto
 {
@@ -59,6 +61,12 @@ namespace MyTeamTasksWpf.View.vProjeto
         private void DgProjetos_Loaded(object sender, RoutedEventArgs e)
         {
             dgProjetos.ItemsSource = ProjetoDAO.ListarProjetos();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
+            lbUserLogado.Content = ValidaLogin.user;
         }
     }
 }

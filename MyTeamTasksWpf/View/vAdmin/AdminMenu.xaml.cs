@@ -4,6 +4,8 @@ using MyTeamTasksWpf.View.vProjeto;
 using MyTeamTasksWpf.View.vUsuario;
 using System.Windows;
 using MyTeamTasksWpf.View.vCliente;
+using System.Windows.Media;
+using MyTeamTasksWpf.Util;
 
 namespace MyTeamTasksWpf.View.vAdmin
 {
@@ -61,6 +63,12 @@ namespace MyTeamTasksWpf.View.vAdmin
             CriarProjeto criarProjeto = new CriarProjeto();
             criarProjeto.Show();
             
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
+            lbUserLogado.Content = ValidaLogin.user;
         }
     }
 }

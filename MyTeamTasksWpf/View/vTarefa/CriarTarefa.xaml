@@ -9,17 +9,17 @@
     <Grid>
         <Label Content="Criar tarefa" HorizontalAlignment="Left" Margin="45,19,0,0" VerticalAlignment="Top" FontSize="24"/>
         <Separator Width="1000" Margin="52,61,22,603" Background="#FFD8D8D8"/>
-        <TextBox x:Name="txtNomeTarefa" HorizontalAlignment="Left" Height="30" Margin="91,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Opacity="0.6"/>
-        <TextBox x:Name="txtIdTarefa" HorizontalAlignment="Left" Height="30" Margin="52,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="34" IsEnabled="False" Opacity="0.6"/>
-        <Button x:Name="btnInserir" Content="Criar" HorizontalAlignment="Left" Margin="52,205,0,0" VerticalAlignment="Top" Width="94" Height="36" BorderBrush="{x:Null}" Click="BtnInserir_Click"/>
-        <Button x:Name="btnLimparCampos" Content="Limpar" HorizontalAlignment="Left" Margin="151,205,0,0" VerticalAlignment="Top" Width="94" Height="36" BorderBrush="{x:Null}"/>
+        <TextBox x:Name="txtNomeTarefa" HorizontalAlignment="Left" Height="30" Margin="91,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Opacity="0.6"/>
+        <TextBox x:Name="txtIdTarefa" HorizontalAlignment="Left" Height="30" Margin="52,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="34" IsEnabled="False" Opacity="0.6"/>
+        <Button x:Name="btnInserir" Content="Criar" HorizontalAlignment="Left" Margin="52,213,0,0" VerticalAlignment="Top" Width="94" Height="36" BorderBrush="{x:Null}" Click="BtnInserir_Click"/>
+        <Button x:Name="btnLimparCampos" Content="Limpar" HorizontalAlignment="Left" Margin="151,213,0,0" VerticalAlignment="Top" Width="94" Height="36" BorderBrush="{x:Null}"/>
         <Label Content="Detalhes" HorizontalAlignment="Left" Margin="52,255,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Separator Margin="131,268,557,396" Background="#FFD8D8D8"/>
         <Label Content="Tipo:" HorizontalAlignment="Left" Margin="64,289,0,0" VerticalAlignment="Top" FontSize="14"/>
         <TextBox x:Name="txtTipo" HorizontalAlignment="Left" Height="23" Margin="145,294,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Opacity="0.6"/>
         <Label Content="Status:" HorizontalAlignment="Left" Margin="321,289,0,0" VerticalAlignment="Top" FontSize="14"/>
         <TextBox x:Name="txtStatus" HorizontalAlignment="Left" Height="23" Margin="397,294,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Opacity="0.6"/>
-        <ComboBox x:Name="cbProjetos" HorizontalAlignment="Left" Margin="52,90,0,0" VerticalAlignment="Top" Width="269" Height="30" Opacity="0.6"/>
+        <ComboBox x:Name="cbProjetos" HorizontalAlignment="Left" Margin="52,110,0,0" VerticalAlignment="Top" Width="269" Height="30" Opacity="0.6"/>
         <TextBox x:Name="txtPrioridade" HorizontalAlignment="Left" Height="23" Margin="145,334,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Opacity="0.6"/>
         <Label Content="Priotidade:" HorizontalAlignment="Left" Margin="64,328,0,0" VerticalAlignment="Top" FontSize="14"/>
         <Label Content="Resolução:" HorizontalAlignment="Left" Margin="321,328,0,0" VerticalAlignment="Top" FontSize="14"/>
@@ -35,14 +35,17 @@
         <Label Content="Cliente:" HorizontalAlignment="Left" Margin="824,289,0,0" VerticalAlignment="Top" FontSize="14"/>
         <Label Content="Requisitante:" HorizontalAlignment="Left" Margin="593,328,0,0" VerticalAlignment="Top" FontSize="14"/>
         <Label Content="Criado em:" HorizontalAlignment="Left" Margin="593,414,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox x:Name="dtCriadoEm" HorizontalAlignment="Left" Height="23" Margin="669,418,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" Opacity="0.6"/>
-        <ComboBox x:Name="cbAssinatura" HorizontalAlignment="Left" Margin="675,294,0,0" VerticalAlignment="Top" Width="120" Opacity="0.6"/>
+        <TextBox x:Name="dtCriadoEm" HorizontalAlignment="Left" Height="23" Margin="682,420,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" Opacity="0.6"/>
+        <ComboBox x:Name="cbAssinatura" HorizontalAlignment="Left" Margin="682,294,0,0" VerticalAlignment="Top" Width="120" Opacity="0.6"/>
         <ComboBox x:Name="cbRequisitante" HorizontalAlignment="Left" Margin="682,334,0,0" VerticalAlignment="Top" Width="120" Opacity="0.6"/>
         <ComboBox x:Name="cbCliente" HorizontalAlignment="Left" Margin="880,294,0,0" VerticalAlignment="Top" Width="120" Opacity="0.59"/>
         <Label x:Name="lbMensagem" Content="" HorizontalAlignment="Left" Margin="151,250,0,0" VerticalAlignment="Top" Width="366"/>
-        <Label x:Name="lbCampoObrigatorio" Content="*" HorizontalAlignment="Left" Margin="326,136,0,0" VerticalAlignment="Top" FontSize="18" Foreground="#FFC13131" Height="30"/>
+        <Label x:Name="lbCampoObrigatorio" Content="*" HorizontalAlignment="Left" Margin="326,169,0,0" VerticalAlignment="Top" FontSize="18" Foreground="#FFC13131" Height="30"/>
         <Label x:Name="lbCampoObrigatorio_Copy" Content="*" HorizontalAlignment="Left" Margin="270,289,0,0" VerticalAlignment="Top" FontSize="18" Foreground="#FFC13131" Height="22"/>
         <Label x:Name="lbCampoObrigatorio_Copy1" Content="*" HorizontalAlignment="Left" Margin="807,328,0,0" VerticalAlignment="Top" FontSize="18" Foreground="#FFC13131" Height="28"/>
+        <Label Content="Projeto" HorizontalAlignment="Left" Margin="47,81,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="ID" HorizontalAlignment="Left" Margin="52,141,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Nome da tarefa" HorizontalAlignment="Left" Margin="76,140,0,0" VerticalAlignment="Top" FontSize="14"/>
 
 
 
