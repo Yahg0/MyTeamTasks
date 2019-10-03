@@ -40,5 +40,8 @@
         <Label Content="Listagem das tarefas" Grid.Column="1" HorizontalAlignment="Left" Margin="0,40,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="24"/>
         <DataGrid x:Name="dgTarefas" Grid.Column="1" HorizontalAlignment="Left" Height="491" Margin="10,112,0,0" Grid.Row="1" VerticalAlignment="Top" Width="1032"/>
 
+        <Separator HorizontalAlignment="Center" Height="26" Margin="0,604,0,0" Grid.Row="1" VerticalAlignment="Top" Width="1274" Background="#FFC7C7C7" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
+        <Label Content="© MyTeamTasks" Grid.Column="1" HorizontalContentAlignment="Center" Margin="0,5,0,22" Grid.Row="2"  FontFamily="Graphik Regular" FontSize="16" Foreground="#FFC7C7C7" Width="1154"/>
+        <Label Content="Curitiba - 2019" Grid.Column="1" HorizontalContentAlignment="Center" Margin="0,29,0,-2" Grid.Row="2"  FontFamily="Graphik Regular" Foreground="#FFC7C7C7" Width="1154"/>
     </Grid>
 </Window>

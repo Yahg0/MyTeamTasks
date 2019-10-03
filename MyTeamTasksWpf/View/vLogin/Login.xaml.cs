@@ -75,7 +75,22 @@ namespace MyTeamTasksWpf.View.vLogin
                 }
                 else
                 {
+                    ValidaLogin.user = txtUser.Text;
+
                     dashboard.btnConfigurações.IsEnabled = true;
+
+                    dashboard.lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
+                    dashboard.lbUserLogado.Content = ValidaLogin.user;
+
+                    pm.lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
+                    pm.lbUserLogado.Content = ValidaLogin.user;
+
+                    tm.lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
+                    tm.lbUserLogado.Content = ValidaLogin.user;
+
+
+                    am.lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
+                    am.lbUserLogado.Content = ValidaLogin.user;
                 }
 
                 if (u != null)
