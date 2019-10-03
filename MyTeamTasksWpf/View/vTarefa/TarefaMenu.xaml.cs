@@ -86,7 +86,13 @@ namespace MyTeamTasksWpf.View.vTarefa
             dgTarefas.ItemsSource = TarefaDAO.ListarTarefas();
         }
 
-        private void Label_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void LbAtualizarTarefa_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            AtualizarTarefa at = new AtualizarTarefa();
+            at.Show();
+        }
+
+        private void LbMinhasTarefas_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             u = UsuarioDAO.BuscarUsuarioPorNome(ValidaLogin.user);
             u.Nickname = ValidaLogin.user;

@@ -18,7 +18,7 @@ namespace MyTeamTasksWpf.Model
 
         //[Key]
         //public int ClienteId { get; set; }
-        public List<Projeto> Projetos { get; set; }
+        //public List<Projeto> Projetos { get; set; }
 
         public override string ToString()
         {

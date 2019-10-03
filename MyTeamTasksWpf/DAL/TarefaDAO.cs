@@ -25,6 +25,11 @@ namespace MyTeamTasksWpf.DAL
             return ctx.Tarefas.Where(x => x.Status == t.Status).ToList();
         }
 
+        public static Tarefa BuscarTarefaPorId(int id)
+        {
+            return ctx.Tarefas.FirstOrDefault(x => x.TarefaId == id);
+        }
+
         public static List<Tarefa> BuscarTarefaPorAssinatura(Usuario u)
         {
             return ctx.Tarefas.Where(s => s.Assinatura.Nickname == u.Nickname).ToList();

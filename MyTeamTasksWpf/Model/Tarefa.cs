@@ -26,7 +26,7 @@ namespace MyTeamTasksWpf.Model
         public Usuario Assinatura { get; set; }
         public Usuario Requisitante { get; set; }
         public Projeto Projeto { get; set; }        
-        public Cliente Cliente { get; set; }
+        //public Cliente Cliente { get; set; }
         public DateTime CriadoEm { get; set; }
 
         public override string ToString()
@@ -40,8 +40,7 @@ namespace MyTeamTasksWpf.Model
                 "\nResolução: " +Resolucao+
                 "\nAssinatura: " +Assinatura.Nickname+
                 "\nRequisitante: " +Requisitante.Nickname+
-                "\nProjeto: " +Projeto.Nome+
-                "\nCliente: " +Cliente.Nome;
+                "\nProjeto: " +Projeto.Nome;
 
         }
     }

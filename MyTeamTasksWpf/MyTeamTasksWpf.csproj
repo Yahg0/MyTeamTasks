@@ -86,10 +86,6 @@
     <Compile Include="DAL\SingletonContext.cs" />
     <Compile Include="DAL\TarefaDAO.cs" />
     <Compile Include="DAL\UsuarioDAO.cs" />
-    <Compile Include="Migrations\201910030136313_RemovidoAtributoLogadoDeUsuario.cs" />
-    <Compile Include="Migrations\201910030136313_RemovidoAtributoLogadoDeUsuario.designer.cs">
-      <DependentUpon>201910030136313_RemovidoAtributoLogadoDeUsuario.cs</DependentUpon>
-    </Compile>
     <Compile Include="Util\ValidaLogin.cs" />
     <Compile Include="View\vAdmin\AdminMenu.xaml.cs">
       <DependentUpon>AdminMenu.xaml</DependentUpon>
@@ -108,6 +104,9 @@
     </Compile>
     <Compile Include="View\vProjeto\ProjetoMenu.xaml.cs">
       <DependentUpon>ProjetoMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\vTarefa\AtualizarTarefa.xaml.cs">
+      <DependentUpon>AtualizarTarefa.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\vTarefa\CriarTarefa.xaml.cs">
       <DependentUpon>CriarTarefa.xaml</DependentUpon>
@@ -146,6 +145,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\vTarefa\AtualizarTarefa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\vTarefa\CriarTarefa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -180,9 +183,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201910030136313_RemovidoAtributoLogadoDeUsuario.resx">
-      <DependentUpon>201910030136313_RemovidoAtributoLogadoDeUsuario.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

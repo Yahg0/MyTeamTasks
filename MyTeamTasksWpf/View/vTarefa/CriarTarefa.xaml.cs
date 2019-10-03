@@ -38,7 +38,7 @@ namespace MyTeamTasksWpf.View.vTarefa
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             cbProjetos.ItemsSource = ProjetoDAO.ListarProjetos();
-            cbCliente.ItemsSource = ClienteDAO.ListarClientes();
+            //cbCliente.ItemsSource = ClienteDAO.ListarClientes();
             cbAssinatura.ItemsSource = UsuarioDAO.ListarUsuarios();
             cbRequisitante.ItemsSource = UsuarioDAO.ListarUsuarios();
 
@@ -81,8 +81,8 @@ namespace MyTeamTasksWpf.View.vTarefa
                 p = ProjetoDAO.BuscarProjetoPorNome(p.Nome);
                 t.Projeto = p;
 
-                c = ClienteDAO.BuscarClientePorNome(c.Nome);
-                t.Cliente = c;
+                //c = ClienteDAO.BuscarClientePorNome(c.Nome);
+                //t.Cliente = c;
 
                 assinatura = UsuarioDAO.BuscarUsuarioPorNome(assinatura.Nome);
                 t.Assinatura = assinatura;

@@ -54,17 +54,7 @@
                 </TransformGroup>
             </Separator.RenderTransform>
         </Separator>
-        <Label Content="Minhas tarefas" Grid.Column="1" HorizontalAlignment="Left" Margin="118,87,0,0" Grid.Row="1" VerticalAlignment="Top" FontWeight="Bold" MouseDoubleClick="Label_MouseDoubleClick"/>
-        <Label Content="Tarefas sem assinatura" Grid.Column="1" HorizontalAlignment="Left" Margin="226,87,0,0" Grid.Row="1" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Separator Grid.Column="1" HorizontalAlignment="Left" Height="6" Margin="212,0,0,519" Grid.Row="1" VerticalAlignment="Bottom" Width="14" RenderTransformOrigin="0.5,0.5">
-            <Separator.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="-1"/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Separator.RenderTransform>
-        </Separator>
+        <Label x:Name="lbMinhasTarefas" Content="Minhas tarefas" Grid.Column="1" HorizontalAlignment="Left" Margin="118,87,0,0" Grid.Row="1" VerticalAlignment="Top" FontWeight="Bold" MouseDoubleClick="LbMinhasTarefas_MouseDoubleClick"/>
+        <Label x:Name="lbAtualizarTarefa" Content="Atualizar tarefa" Grid.Column="1" HorizontalAlignment="Left" Margin="945,81,0,0" Grid.Row="1" VerticalAlignment="Top" FontWeight="Bold" MouseDoubleClick="LbAtualizarTarefa_MouseDoubleClick"/>
     </Grid>
 </Window>
