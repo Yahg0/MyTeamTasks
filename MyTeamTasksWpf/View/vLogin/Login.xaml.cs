@@ -40,8 +40,10 @@ namespace MyTeamTasksWpf.View.vLogin
 
                 if (u != null)
                 {
+                    //MessageBox.Show(u.Nome);
                     Dashboard dashboard = new Dashboard(u);
                     u = ValidaLogin.AlteraStatusLogin(u);
+                    
                     dashboard.Show();
                     this.Close();
                 }

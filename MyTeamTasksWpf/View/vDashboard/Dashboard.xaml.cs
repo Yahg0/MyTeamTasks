@@ -71,7 +71,7 @@ namespace MyTeamTasksWpf.View.vDashboard
             u = new Usuario();
             u = ValidaLogin.GetUsuarioLogado();
             
-            //lbUserLogado.Content = u.Nickname;
+            lbUserLogado.Content = u.Nickname;
             lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
             //u.Logado = false;
 
