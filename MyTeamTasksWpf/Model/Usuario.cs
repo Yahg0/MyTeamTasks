@@ -22,14 +22,11 @@ namespace MyTeamTasksWpf.Model
         public string Cargo { get; set; }
         public string Nickname { get; set; }
         public string Senha { get; set; }
-        public bool Logado { get; set; }
-
-
-
+        public Boolean Logado { get; set; }
         public override string ToString()
         {
             return Nickname;
         }
-        //fim
+       
     }
 }

@@ -27,19 +27,14 @@ namespace MyTeamTasksWpf.DAL
 
         public static Usuario AlteraStatusLogin(Usuario u)
         {
-
             ctx.Entry(u).State = EntityState.Modified;
             u.Logado = true;
             ctx.SaveChanges();
             return u;
-
         }
-
         public static Usuario GetUsuarioLogado()
         {
             return ctx.Usuarios.FirstOrDefault(x => x.Logado == true);
         }
-
-
     }
 }

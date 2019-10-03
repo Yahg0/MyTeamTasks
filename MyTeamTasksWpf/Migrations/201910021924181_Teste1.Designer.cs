@@ -7,13 +7,13 @@ namespace MyTeamTasksWpf.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.3.0")]
-    public sealed partial class AddBoolNoUsuario : IMigrationMetadata
+    public sealed partial class Teste1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddBoolNoUsuario));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Teste1));
         
         string IMigrationMetadata.Id
         {
-            get { return "201910020050072_AddBoolNoUsuario"; }
+            get { return "201910021924181_Teste1"; }
         }
         
         string IMigrationMetadata.Source

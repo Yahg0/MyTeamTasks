@@ -1,5 +1,6 @@
 ﻿using MyTeamTasksWpf.DAL;
 using MyTeamTasksWpf.Model;
+using MyTeamTasksWpf.Utils;
 using MyTeamTasksWpf.View.vDashboard;
 using System;
 using System.Collections.Generic;
@@ -40,6 +41,7 @@ namespace MyTeamTasksWpf.View.vLogin
                 if (u != null)
                 {
                     Dashboard dashboard = new Dashboard(u);
+                    u = ValidaLogin.AlteraStatusLogin(u);
                     dashboard.Show();
                     this.Close();
                 }

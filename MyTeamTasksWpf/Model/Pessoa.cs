@@ -12,13 +12,13 @@ namespace MyTeamTasksWpf.Model
     {
         public Pessoa()
         {
-            CriadoEm = DateTime.Now;
+            CriadoEm = DateTime.Now;            
         }
         [Key]
         public int PessoaId { get; set; }
         public string Nome { get; set; }
         public DateTime CriadoEm { get; set; }
-
+        
         public override string ToString()
         {
             return "ID: " + PessoaId +

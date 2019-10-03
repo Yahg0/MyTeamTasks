@@ -8,6 +8,7 @@ using MyTeamTasksWpf.DAL;
 using MyTeamTasksWpf.Model;
 using LiveCharts;
 using MyTeamTasksWpf.View.vLogin;
+using MyTeamTasksWpf.Utils;
 
 namespace MyTeamTasksWpf.View.vDashboard
 {
@@ -68,10 +69,8 @@ namespace MyTeamTasksWpf.View.vDashboard
             
             Console.WriteLine("Nome do user" + login.txtUser.Text);
             u = new Usuario();
-
-            u.Nickname = nickname;
+            u = ValidaLogin.GetUsuarioLogado();
             
-            u = LoginDAO.GetUsuarioLogado();
             //lbUserLogado.Content = u.Nickname;
             lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
             //u.Logado = false;
@@ -79,7 +78,7 @@ namespace MyTeamTasksWpf.View.vDashboard
             //Validação de usuario logado
             try
             {
-                if (nickname.Equals("Admin"))
+                if (u.Nickname.Equals("Admin"))
                 {
                     btnConfigurações.IsEnabled = true;
                 }
