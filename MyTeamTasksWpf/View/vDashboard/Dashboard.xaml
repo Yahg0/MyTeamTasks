@@ -40,13 +40,22 @@
             </Viewbox>
         </Button>
 
-        <lvc:Gauge x:Name="Pizza" Grid.Row="1" Grid.Column="1" Margin="37,123,789,278"
+        <lvc:Gauge x:Name="GraficoUsuarios" Grid.Row="1" Grid.Column="1" Margin="10,220,816,180"
                    Uses360Mode="True"
                    From="0" To="100" Value="0" />
-        <Label Content="Usuários cadastrados" HorizontalContentAlignment="Center" Grid.Column="1" HorizontalAlignment="Left" Margin="37,67,0,0" Grid.Row="1" VerticalAlignment="Top" Width="328" FontFamily="Graphik Regular" FontSize="16"/>
+
+        <lvc:Gauge x:Name="GraficoProjetos" Grid.Row="1" Grid.Column="1" Margin="771,202,55,199"
+                   Uses360Mode="True"
+                   From="0" To="100" Value="0" />
+        <Label Content="Usuários cadastrados" HorizontalContentAlignment="Center" Grid.Column="1" HorizontalAlignment="Left" Margin="10,164,0,0" Grid.Row="1" VerticalAlignment="Top" Width="328" FontFamily="Graphik Regular" FontSize="16"/>
         <Separator HorizontalAlignment="Center" Height="26" Margin="0,604,0,0" Grid.Row="1" VerticalAlignment="Top" Width="1274" Background="#FFC7C7C7" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
         <Label Content="© MyTeamTasks" Grid.Column="1" HorizontalContentAlignment="Center" Margin="0,5,0,22" Grid.Row="2"  FontFamily="Graphik Regular" FontSize="16" Foreground="#FFC7C7C7" Width="1154"/>
         <Label Content="Curitiba - 2019" Grid.Column="1" HorizontalContentAlignment="Center" Margin="0,29,0,-2" Grid.Row="2"  FontFamily="Graphik Regular" Foreground="#FFC7C7C7" Width="1154"/>
+        <Label Content="Projetos cadastrados" HorizontalContentAlignment="Center" Grid.Column="1" HorizontalAlignment="Left" Margin="771,154,0,0" Grid.Row="1" VerticalAlignment="Top" Width="328" FontFamily="Graphik Regular" FontSize="16"/>
+        <lvc:Gauge x:Name="GraficoTarefas" Grid.Row="1" Grid.Column="1" Margin="390,220,436,180"
+            Uses360Mode="True"
+            From="0" To="100" Value="0" />
+        <Label Content="Total de tarefas" HorizontalContentAlignment="Center" Grid.Column="1" HorizontalAlignment="Left" Margin="390,164,0,0" Grid.Row="1" VerticalAlignment="Top" Width="328" FontFamily="Graphik Regular" FontSize="16"/>
 
 
     </Grid>

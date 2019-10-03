@@ -38,7 +38,7 @@ namespace MyTeamTasksWpf.View.vTarefa
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             cbProjetos.ItemsSource = ProjetoDAO.ListarProjetos();
-            cbCliente.ItemsSource = ClienteDAO.ListarClientes();
+            //cbCliente.ItemsSource = ClienteDAO.ListarClientes()
             cbAssinatura.ItemsSource = UsuarioDAO.ListarUsuarios();
             cbRequisitante.ItemsSource = UsuarioDAO.ListarUsuarios();
 
@@ -91,7 +91,7 @@ namespace MyTeamTasksWpf.View.vTarefa
                     txtPrioridade.Text = t.Prioridade.ToString();
                     txtResolucao.Text = t.Resolucao;
                     txtDesc.Text = t.Descricao;
-                    cbAssinatura.SelectedItem = t.Assinatura.Nickname.ToString();
+                    //cbAssinatura.SelectedItem = t.Assinatura.Nickname.ToString();
                     //cbCliente.SelectedValue = t.Cliente.Nome;
                     //cbRequisitante.SelectedValue = t.Requisitante.Nickname;
                     dtCriadoEm.Text = t.CriadoEm.ToString();

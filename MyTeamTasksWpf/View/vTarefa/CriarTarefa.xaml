@@ -32,13 +32,11 @@
         <Label Content="Datas" HorizontalAlignment="Left" Margin="570,375,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Separator Margin="625,388,45,276" Background="#FFD8D8D8"/>
         <Label Content="Assinatura:" HorizontalAlignment="Left" Margin="593,289,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label Content="Cliente:" HorizontalAlignment="Left" Margin="824,289,0,0" VerticalAlignment="Top" FontSize="14" IsEnabled="False"/>
         <Label Content="Requisitante:" HorizontalAlignment="Left" Margin="593,328,0,0" VerticalAlignment="Top" FontSize="14"/>
         <Label Content="Criado em:" HorizontalAlignment="Left" Margin="593,414,0,0" VerticalAlignment="Top" FontSize="14"/>
         <TextBox x:Name="dtCriadoEm" HorizontalAlignment="Left" Height="23" Margin="682,420,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" Opacity="0.6"/>
         <ComboBox x:Name="cbAssinatura" HorizontalAlignment="Left" Margin="682,294,0,0" VerticalAlignment="Top" Width="120" Opacity="0.6"/>
         <ComboBox x:Name="cbRequisitante" HorizontalAlignment="Left" Margin="682,334,0,0" VerticalAlignment="Top" Width="120" Opacity="0.6"/>
-        <ComboBox x:Name="cbCliente" HorizontalAlignment="Left" Margin="880,294,0,0" VerticalAlignment="Top" Width="120" Opacity="0.59" IsEnabled="False"/>
         <Label x:Name="lbMensagem" Content="" HorizontalAlignment="Left" Margin="151,250,0,0" VerticalAlignment="Top" Width="366"/>
         <Label x:Name="lbCampoObrigatorio" Content="*" HorizontalAlignment="Left" Margin="326,169,0,0" VerticalAlignment="Top" FontSize="18" Foreground="#FFC13131" Height="30"/>
         <Label x:Name="lbCampoObrigatorio_Copy" Content="*" HorizontalAlignment="Left" Margin="270,289,0,0" VerticalAlignment="Top" FontSize="18" Foreground="#FFC13131" Height="22"/>

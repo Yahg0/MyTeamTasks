@@ -69,9 +69,9 @@ namespace MyTeamTasksWpf.View.vTarefa
                 p = new Projeto() {
                     Nome = cbProjetos.SelectedValue.ToString(),
                 };//Validar aqui, cliente vazio estoura exceção
-                c = new Cliente() {
-                    Nome = cbCliente.SelectedValue.ToString(),
-                };
+                //c = new Cliente() {
+                //    Nome = cbCliente.SelectedValue.ToString(),
+                //};
                 assinatura = new Usuario() {
                     Nickname = cbAssinatura.SelectedValue.ToString(),                    
                 };
@@ -84,15 +84,15 @@ namespace MyTeamTasksWpf.View.vTarefa
                 //c = ClienteDAO.BuscarClientePorNome(c.Nome);
                 //t.Cliente = c;
 
-                assinatura = UsuarioDAO.BuscarUsuarioPorNome(assinatura.Nome);
+                assinatura = UsuarioDAO.BuscarUsuarioPorNome(assinatura.Nickname);
                 t.Assinatura = assinatura;
 
-                requisitante = UsuarioDAO.BuscarUsuarioPorNome(requisitante.Nome);
+                requisitante = UsuarioDAO.BuscarUsuarioPorNome(requisitante.Nickname);
                 t.Requisitante = requisitante;
 
                 t.CriadoEm = DateTime.Now;
-                
 
+                Console.WriteLine("Assinatura = " +t.Assinatura.Nickname + "Requisitante = " +t.Requisitante.Nickname);
                 TarefaDAO.CadastrarTarefa(t);
 
                 lbMensagem.Foreground = new SolidColorBrush(Colors.DarkGreen);

@@ -60,8 +60,14 @@ namespace MyTeamTasksWpf.View.vDashboard
             btnConfigurações.IsEnabled = ValidaLogin.adminLogado;
 
             int users = UsuarioDAO.ListarUsuarios().Count;
+            int projetos = ProjetoDAO.ListarProjetos().Count;
+            int tarefas = TarefaDAO.ListarTarefas().Count;
 
-            Pizza.Value = users;
+            GraficoUsuarios.Value = users;            
+            GraficoProjetos.Value = projetos;
+            GraficoTarefas.Value = tarefas;
+
+
 
 
         }
