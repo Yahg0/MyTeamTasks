@@ -13,18 +13,18 @@ namespace MyTeamTasksWpf.View.vProjeto
     /// </summary>
     public partial class ProjetoMenu : Window
     {
-        private string nickname;
+        //private string nickname;
         public ProjetoMenu()
         {
             InitializeComponent();
         }
 
-        public ProjetoMenu(string nickname)
-        {
-            InitializeComponent();            
-            this.nickname = nickname;
-            lbUserLogado.Content = nickname;
-        }
+        //public ProjetoMenu(string nickname)
+        //{
+        //    InitializeComponent();            
+        //    this.nickname = nickname;
+        //    lbUserLogado.Content = nickname;
+        //}
 
         private void BtnTarefas_Click(object sender, RoutedEventArgs e)
         {

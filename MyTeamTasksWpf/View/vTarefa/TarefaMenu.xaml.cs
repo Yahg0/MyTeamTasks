@@ -26,19 +26,21 @@ namespace MyTeamTasksWpf.View.vTarefa
     /// </summary>
     public partial class TarefaMenu : Window
     {
-        private string nickname;
+        //private string nickname;
         Usuario u;
         public TarefaMenu()
         {
             InitializeComponent();
+
+            dgTarefas.ItemsSource = TarefaDAO.ListarTarefas();
         }
 
-        public TarefaMenu(string nickname)
-        {
-            InitializeComponent();
-            this.nickname = nickname;
-            lbUserLogado.Content = nickname;
-        }
+        //public TarefaMenu(string nickname)
+        //{
+        //    InitializeComponent();
+        //    this.nickname = nickname;
+        //    lbUserLogado.Content = nickname;
+        //}
         
  
         private void BtnProjeto_Click(object sender, RoutedEventArgs e)
@@ -75,7 +77,8 @@ namespace MyTeamTasksWpf.View.vTarefa
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            dgTarefas.ItemsSource = TarefaDAO.ListarTarefas();
+            List<Tarefa> tarefas = TarefaDAO.ListarTarefas();
+                //dgTarefas.ItemsSource = TarefaDAO.ListarTarefas();
             lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
             lbUserLogado.Content = ValidaLogin.user;
             btnConfigurações.IsEnabled = ValidaLogin.adminLogado;
@@ -83,7 +86,7 @@ namespace MyTeamTasksWpf.View.vTarefa
 
         private void LbTodasTarefas_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            dgTarefas.ItemsSource = TarefaDAO.ListarTarefas();
+            //dgTarefas.ItemsSource = TarefaDAO.ListarTarefas();
         }
 
         private void LbAtualizarTarefa_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -94,9 +97,9 @@ namespace MyTeamTasksWpf.View.vTarefa
 
         private void LbMinhasTarefas_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            u = UsuarioDAO.BuscarUsuarioPorNome(ValidaLogin.user);
-            u.Nickname = ValidaLogin.user;
-            dgTarefas.ItemsSource = TarefaDAO.BuscarTarefaPorAssinatura(u);
+            //u = UsuarioDAO.BuscarUsuarioPorNome(ValidaLogin.user);
+            //u.Nickname = ValidaLogin.user;
+            //dgTarefas.ItemsSource = TarefaDAO.BuscarTarefaPorAssinatura(u)
         }
     }
 }

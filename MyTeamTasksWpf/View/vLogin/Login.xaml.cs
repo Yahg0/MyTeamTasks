@@ -47,15 +47,17 @@ namespace MyTeamTasksWpf.View.vLogin
 
 
                 u = LoginDAO.AutenticarUsuario(txtUser.Text, txtSenha.Password);
-                u.Nickname = txtUser.Text;
+                //u.Nickname = txtUser.Text;
 
                 if (u != null)
                 {
-                    u = UsuarioDAO.BuscarUsuarioPorNome(txtUser.Text);
+                    //u = UsuarioDAO.BuscarUsuarioPorNome(u.Nickname);
                     if (u.Cargo.Equals("Gerente de projetos") || u.Cargo.Equals("Administrador"))
                     {
                         ValidaLogin.GerenteLogado = true;
+
                     }
+                    
                 }
 
                 #region Validações de acesso                
@@ -88,29 +90,51 @@ namespace MyTeamTasksWpf.View.vLogin
                 }
                 else
                 {
-                    //Habilita botão de config quando é adm
-                    dashboard.btnConfigurações.IsEnabled = true;
-                    pm.btnConfigurações.IsEnabled = true;
-                    tm.btnConfigurações.IsEnabled = true;
-                    am.btnConfigurações.IsEnabled = true;
+                    if (txtUser.Text.Equals("admin"))
+                    {
+                        //Habilita botão de config quando é adm
+                        dashboard.btnConfigurações.IsEnabled = true;
+                        pm.btnConfigurações.IsEnabled = true;
+                        tm.btnConfigurações.IsEnabled = true;
+                        am.btnConfigurações.IsEnabled = true;
 
-                    ValidaLogin.user = txtUser.Text;
-                    ValidaLogin.adminLogado = true;
+                        ValidaLogin.user = txtUser.Text;
+                        ValidaLogin.adminLogado = true;
 
-                    dashboard.btnConfigurações.IsEnabled = true;
+                        dashboard.btnConfigurações.IsEnabled = true;
 
-                    dashboard.lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
-                    dashboard.lbUserLogado.Content = ValidaLogin.user;
+                        dashboard.lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
+                        dashboard.lbUserLogado.Content = ValidaLogin.user;
 
-                    pm.lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
-                    pm.lbUserLogado.Content = ValidaLogin.user;
+                        pm.lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
+                        pm.lbUserLogado.Content = ValidaLogin.user;
 
-                    tm.lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
-                    tm.lbUserLogado.Content = ValidaLogin.user;
+                        tm.lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
+                        tm.lbUserLogado.Content = ValidaLogin.user;
 
 
-                    am.lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
-                    am.lbUserLogado.Content = ValidaLogin.user;
+                        am.lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
+                        am.lbUserLogado.Content = ValidaLogin.user;
+
+                    }
+                    else
+                    {
+                        ValidaLogin.user = txtUser.Text;
+                        dashboard.btnConfigurações.IsEnabled = false;
+
+                        dashboard.lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
+                        dashboard.lbUserLogado.Content = ValidaLogin.user;
+
+                        pm.lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
+                        pm.lbUserLogado.Content = ValidaLogin.user;
+
+                        tm.lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
+                        tm.lbUserLogado.Content = ValidaLogin.user;
+
+
+                        am.lbUserLogado.Foreground = new SolidColorBrush(Colors.White);
+                        am.lbUserLogado.Content = ValidaLogin.user;
+                    }
                 }
                
                 #endregion

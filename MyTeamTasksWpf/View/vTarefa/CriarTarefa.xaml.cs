@@ -91,8 +91,7 @@ namespace MyTeamTasksWpf.View.vTarefa
                 t.Requisitante = requisitante;
 
                 t.CriadoEm = DateTime.Now;
-
-                Console.WriteLine("Assinatura = " +t.Assinatura.Nickname + "Requisitante = " +t.Requisitante.Nickname);
+                
                 TarefaDAO.CadastrarTarefa(t);
 
                 lbMensagem.Foreground = new SolidColorBrush(Colors.DarkGreen);

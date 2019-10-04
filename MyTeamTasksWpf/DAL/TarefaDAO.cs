@@ -30,10 +30,10 @@ namespace MyTeamTasksWpf.DAL
             return ctx.Tarefas.FirstOrDefault(x => x.TarefaId == id);
         }
 
-        public static List<Tarefa> BuscarTarefaPorAssinatura(Usuario u)
-        {
-            return ctx.Tarefas.Where(s => s.Assinatura.Nickname == u.Nickname).ToList();
-        }
+        //public static List<Tarefa> BuscarTarefaPorAssinatura(Usuario u)
+        //{
+        //    return ctx.Tarefas.Where(x => x.Assinatura.Nickname == u.Nickname).ToList();
+        //}
 
         public static bool RemoverTarefa(Tarefa t) {
             try
