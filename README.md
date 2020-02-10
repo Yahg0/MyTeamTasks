@@ -1,6 +1,6 @@
 # MyTeamTasks
 
-Sistema de controles de tarefas, inspirado no Jira, desenvolvido em C#
+O projeto foi desenvolvido para contemplar a nota final de avaliação no curso de Analise e desenvolvimento de sistemas - Universidade Positivo 2019 - Matéria: Desenvolvimento de sistemas Microsoft
 
 ### Tecnologias
 - IDE: Visual Studio 2019
