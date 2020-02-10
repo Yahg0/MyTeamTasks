@@ -1,5 +1,7 @@
 # MyTeamTasks
 
+Sistema de controles de tarefas, inspirado no Jira, desenvolvido em C#
+
 ### Dependencias 
 - Entity Framework 
 ```
